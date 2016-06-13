@@ -1,0 +1,21 @@
+Zasady dzielenia wyrazów na sylaby w języku polskim
+Dzielimy wyraz na tyle sylab, ile jest samogłosek. Jeżeli pomiędzy samogłoskami znajduje się jedna spółgłoska, nie oddzielamy jej od następującej po niej samogłoski. Jeżeli więcej, nie oddzielamy ostatniej spółgłoski od następującej po niej samogłoski. Oczywiście, jak to zwykle bywa w naszym języku, występują pewne wyjątki, a w niektórych wypadkach należy kierować się wyczuciem.
+
+Reguły fonetyczne
+
+Nie dzieli się liter oznaczających jedną głoskę,
+np. cie-szyć, a nie cies-zyć,
+ani wyrazów jednosylabowych, gdyż ośrodkiem sylaby powinna być zawsze samogłoska
+np. krzak, a nie krz-ak.
+Zawsze rozdziela się dwie jednakowe spółgłoski,
+np. wan-na, Jo-an-na.
+Grupę kilku spółgłosek można dzielić w dowolnym miejscu,
+np. mat-ka, ma-tka.
+Zawsze należy oddzielić pojedynczą spółgłoskę, która stoi między samogłoskami,
+np. ra-tu-nek.
+Trzeba brać pod uwagę granicę pomiędzy przedrostkiem (przed-, nie-, roz-, …) i rdzeniem wyrazu,
+np. roz‑mowa, przed-kła-dać.
+Dyftong
+
+Nie rozbija się połączeń spółgłosek au, eu, jeżeli wymawiamy je jednosylabowo (podczas wymowy samogłoska „u” brzmi jak „ł”),
+np. pau-za, Eu-ro-pa, hy-drau-lik, ale na-u-ka
