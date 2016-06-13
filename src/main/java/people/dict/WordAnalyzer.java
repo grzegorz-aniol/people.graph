@@ -1,36 +1,22 @@
 package people.dict;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.LinkedList;
 import java.util.List;
-import java.util.ListIterator;
-import java.util.Set;
 
-import org.junit.experimental.theories.PotentialAssignment.CouldNotGenerateValueException;
-
-import com.sun.jndi.toolkit.ctx.ComponentContext;
-import com.sun.org.apache.xml.internal.utils.Hashtree2Node;
-
-import people.dict.CharListExt.ListIteratorEx;
+import people.dict.PhoneSplitList.ListIteratorEx;
 
 public class WordAnalyzer {
 
-	private static final Set<String> COMPONENT_CONSONANTS = new HashSet<String>(Arrays.asList(new String[] {"sz", "rz", "cz", "ch", "dż", "dź"}));
-	private static final Set<String> COMPONENT_VOWELS = new HashSet<String>(Arrays.asList(new String[] {"ea", "au"}));
-	
 	public static String[] splitWordIntoSyllable(final String word) {
 
-		CharListExt list = new CharListExt(word);
+		PhoneSplitList list = new PhoneSplitList(word);
 		
 		List<String> ret = new ArrayList<String>(word.length() + 1);
 		StringBuilder sb = new StringBuilder();
 		int cntVowelsLeft = list.getVowelsCount();
 
 		// #1 Do not split words with only one or less vowels
-		if (cntVowelsLeft <= 1) {
+		if (cntVowelsLeft <= 1) {	
 			return new String[] {word};
 		}
 		//
@@ -40,10 +26,9 @@ public class WordAnalyzer {
 		ListIteratorEx iter = list.listExtIterator();
 		
 		int i = 0;
-		boolean contTwo = false;
 		
 		while (iter.hasNext()) {
-			Character c = iter.next();
+			String str = iter.next();
 		
 			boolean isVowel = iter.isVowel();
 			
@@ -58,21 +43,14 @@ public class WordAnalyzer {
 					
 				default:
 					
-					if (contTwo) {
-						contTwo = false;
-						cont = true;
-						isComponentConsonant = false; 
-						break; 
-					}
-					
 					// continue if there is not any vowel left
 					cont |= (!isVowel && cntVowelsLeft == 0);
 					
 					//  check component consonant 
-					isComponentConsonant = (iter.getNextCharsCount() >= 2 && COMPONENT_CONSONANTS.contains(iter.getChars(2)));
+					isComponentConsonant = PhoneConst.isComponentConsonant(str);
 
 					// #6 - always split if a consonants is between two vowels
-					split = (i>0 && isPrevVowels && !isVowel && iter.hasNext() && (iter.isNextVowel() || isComponentConsonant));
+					split = (i>0 && isPrevVowels && !isVowel && iter.hasNext() && iter.isNextVowel());
 					if (split) {
 						break; 
 					}
@@ -80,19 +58,17 @@ public class WordAnalyzer {
 					// #2 continue if 2 characters are component consonant (e.g. rz, ch, sz, cz)
 					cont |= isComponentConsonant;
 					if (cont) {
-						contTwo = true;
 						break; 
 					}
 					
 					// #8 - continue for two consecutive vowels like: au, eu (e.g. hy - drau -lik, Eu - ro - pa)
-					cont |= (iter.getNextCharsCount() >= 2 && COMPONENT_VOWELS.contains(iter.getChars(2)));
+					cont |= PhoneConst.isComponentVowels(str);
 					if (cont) {
-						contTwo = true;
 						break;
 					}
 					
 					// #5 two same consecutive consonants need to be break
-					split |= (!isVowel && iter.hasNext() && iter.getNext()==c);
+					split |= (!isVowel && iter.hasNext() && iter.getNext().compareToIgnoreCase(str)==0);
 					
 					// Split is there is already vowel and then are two consonants
 					split |= (hasSyllableVowel && !isVowel && !isPrevVowels);
@@ -124,7 +100,7 @@ public class WordAnalyzer {
 				hasSyllableVowel = false; 
 			}
 			
-			sb.append(c.charValue());
+			sb.append(str);
 			isPrevVowels = isVowel;
 			hasSyllableVowel |= isVowel; 
 			++i;

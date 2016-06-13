@@ -377,7 +377,7 @@ Dobrosław,true
 Dobrosława,false
 Dobrowiest,true
 Dobrowit,true
-DobrowÃ³j,true
+Dobrowój,true
 Dobrymir,true
 Dolores,true
 Domamir,true
@@ -396,7 +396,7 @@ Domosława,false
 Donat,true
 Donata,false
 Dorian,true
-Doris,true
+Doris,false
 Dorota,false
 Dragomir,true
 Drogomił,true
@@ -647,10 +647,6 @@ Jadwiga,false
 Jagoda,false
 Jakobina,false
 Jakub,true
-Jan Chryzostom,true
-Jan Gwalbert,true
-Jan Kanty,true
-Jan Nepomucen,true
 Jan,true
 Janina,false
 Janisław,true
@@ -683,10 +679,10 @@ Jonatan,true
 Jordan,true
 Jowita,false
 Jozafat,true
-JÃ³zef,true
-JÃ³zefa,false
-JÃ³zefat,true
-JÃ³zefina,false
+Józef,true
+Józefa,false
+Józefat,true
+Józefina,false
 Juda,false
 Judyta,false
 Julia,false
@@ -1510,10 +1506,10 @@ Wojsława,false
 Wolfgang,true
 Wolimir,true
 Wolmar,true
-WrÃ³cimir,true
+Wrócimir,true
 Wrócisław,true
 Wrócisława,false
-WrÃ³ciwoj,true
+Wróciwoj,true
 Wrzesław,true
 Wrzesława,false
 Wszebąd,true
@@ -1586,7 +1582,7 @@ Boromeusz,true
 Chryzostom,true
 Dajana,false
 Dalila,false
-Damaris,true
+Damaris,false
 Debora,false
 Denis,true
 Diomeda,false

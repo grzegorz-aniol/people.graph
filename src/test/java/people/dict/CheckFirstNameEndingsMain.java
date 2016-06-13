@@ -56,7 +56,20 @@ public class CheckFirstNameEndingsMain {
 			if (syllables == null || syllables.length <= 0) {
 				System.err.println(String.format("Can't split word '%s' into syllables.", firstName));
 			} else {
+				
+				// get last syllable
 				String ending = syllables[syllables.length-1];
+				
+				// get last vowel from earlier syllable (if any)
+				if (syllables.length > 1) {
+					String syllable2 = syllables[syllables.length-2];
+					if (syllable2.length() > 0) {
+						String v2 = syllable2.substring(syllable2.length()-1);
+						if (PhoneConst.isVowel(v2)) {
+							ending = v2 + ending; 
+						}
+					}
+				}
 				EndingData data = endings.get(item.getValue().sex).get(ending);
 				if (data == null) {
 					data = new EndingData(ending);
