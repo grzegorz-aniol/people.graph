@@ -1,0 +1,370 @@
+ina - 25 - Marcelina, Mina, Alina, Sabina, Angelina, Saturnina, Nina, Halina, Karina, Marina
+ław - 24 - Tomisław, Przemysław, Jarosław, Mścisław, Wiaczesław, Wodzisław, Stanisław, Mieczysław, Czesław, Bogusław
+awa - 18 - Bronisława, Wacława, Władysława, Przemysława, Wisława, Mieczysława, Gustawa, Stanisława, Wiesława, Sobiesława
+da - 14 - Magda, Matylda, Witolda, Leopolda, Miranda, Ryszarda, Kunegunda, Amanda, Wanda, Romualda
+ana - 13 - Oriana, Romana, Oksana, Swietłana, Diana, Sebastiana, Bogdana, Bohdana, Liliana, Adriana
+ela - 13 - Rafaela, Aniela, Pamela, Manuela, Gabriela, Izabela, Angela, Emanuela, Ariela, Samuela
+yna - 11 - Martyna, Katarzyna, Augustyna, Maryna, Lucyna, Faustyna, Grażyna, Seweryna, Klaudyna, Krystyna
+ta - 9 - Benedykta, Marta, Berta, Augusta, Alberta, Jolanta, Norberta, Roberta, Ernesta
+ena - 8 - Magdalena, Bożena, Marzena, Lena, Milena, Irena, Helena, Rena
+bert - 7 - Gilbert, Engelbert, Albert, Herbert, Norbert, Lambert, Adalbert
+ita - 7 - Julita, Benita, Marita, Anita, Rita, Jowita, Nikita
+anna - 5 - Marzanna, Joanna, Adrianna, Marianna, Hanna
+ara - 5 - Waldemara, Sara, Dagmara, Tamara, Barbara
+ata - 5 - Małgorzata, Donata, Amata, Renata, Agata
+omir - 5 - Radomir, Ludomir, Jaromir, Sławomir, Dragomir
+ona - 5 - Ramona, Ilona, Iwona, Leona, Zenona
+etta - 4 - Violetta, Bernadetta, Loretta, Wioletta
+ika - 4 - Monika, Weronika, Ludwika, Dominika
+ilian - 4 - Emilian, Kilian, Maksymilian, Lilian
+ira - 4 - Kira, Mira, Sławomira, Elwira
+ma - 4 - Kosma, Dyzma, Wilma, Alma
+ora - 4 - Flora, Eleonora, Teodora, Nora
+tyn - 4 - Walentyn, Justyn, Konstantyn, Augustyn
+alia - 3 - Natalia, Dalia, Rozalia
+ary - 3 - Apolinary, Cezary, Hilary
+dan - 3 - Jordan, Bogdan, Bohdan
+elia - 3 - Kornelia, Ofelia, Amelia
+eta - 3 - Elżbieta, Aneta, Margareta
+iza - 3 - Eliza, Liza, Luiza
+iła - 3 - Bogumiła, Ludmiła, Miła
+ja - 3 - Patrycja, Felicja, Alicja
+ka - 3 - Agnieszka, Franciszka, Blanka
+man - 3 - Norman, Herman, German
+ola - 3 - Mariola, Karola, Pola
+per - 3 - Kacper, Prosper, Kasper
+tian - 3 - Krystian, Chrystian, Sebastian
+ty - 3 - Wincenty, Konstanty, Walenty
+adia - 2 - Nadia, Leokadia
+aria - 2 - Daria, Maria
+ariusz - 2 - Dariusz, Mariusz
+atan - 2 - Natan, Jonatan
+ban - 2 - Alban, Urban
+dra - 2 - Aleksandra, Sandra
+eda - 2 - Manfreda, Alfreda
+ella - 2 - Izabella, Stella
+era - 2 - Kazimiera, Wiera
+ery - 2 - Walery, Dezydery
+fa - 2 - Rudolfa, Adolfa
+fred - 2 - Alfred, Manfred
+fryd - 2 - Gotfryd, Zygfryd
+ga - 2 - Olga, Kinga
+hard - 2 - Eberhard, Gerhard
+ida - 2 - Leonida, Dawida
+igiusz - 2 - Remigiusz, Eligiusz
+imierz - 2 - Kazimierz, Włodzimierz
+jan - 2 - Łucjan, Lucjan
+mund - 2 - Edmund, Rajmund
+ofia - 2 - Sofia, Zofia
+onald - 2 - Ronald, Donald
+onia - 2 - Sonia, Apolonia
+oria - 2 - Wiktoria, Gloria
+orian - 2 - Dorian, Florian
+rian - 2 - Cyprian, Adrian
+ryk - 2 - Patryk, Henryk
+ter - 2 - Sylwester, Walter
+tor - 2 - Nestor, Wiktor
+uta - 2 - Ruta, Danuta
+win - 2 - Edwin, Erwin
+yka - 2 - Henryka, Fryderyka
+ymon - 2 - Szymon, Tymon
+yta - 2 - Edyta, Zyta
+Abel - 1 - Abel
+Ada - 1 - Ada
+Adam - 1 - Adam
+Adolf - 1 - Adolf
+Alan - 1 - Alan
+Alf - 1 - Alf
+Ali - 1 - Ali
+Amin - 1 - Amin
+Amon - 1 - Amon
+Amos - 1 - Amos
+Anna - 1 - Anna
+Ariel - 1 - Ariel
+Aron - 1 - Aron
+August - 1 - August
+Axel - 1 - Axel
+Beata - 1 - Beata
+Bjorn - 1 - Bjorn
+Burchard - 1 - Burchard
+Czech - 1 - Czech
+Dan - 1 - Dan
+Egon - 1 - Egon
+Eliasz - 1 - Eliasz
+Emil - 1 - Emil
+Emma - 1 - Emma
+Erast - 1 - Erast
+Erazm - 1 - Erazm
+Eryk - 1 - Eryk
+Ewa - 1 - Ewa
+Ewald - 1 - Ewald
+Faust - 1 - Faust
+Gall - 1 - Gall
+Ida - 1 - Ida
+Igor - 1 - Igor
+Iwan - 1 - Iwan
+Izaak - 1 - Izaak
+Jan - 1 - Jan
+Joel - 1 - Joel
+Jędrzej - 1 - Jędrzej
+Kir - 1 - Kir
+Klaudia - 1 - Klaudia
+Klaudiusz - 1 - Klaudiusz
+Klaus - 1 - Klaus
+Kurt - 1 - Kurt
+Laura - 1 - Laura
+Lech - 1 - Lech
+Leon - 1 - Leon
+Lew - 1 - Lew
+Maura - 1 - Maura
+Melchior - 1 - Melchior
+Naum - 1 - Naum
+Oda - 1 - Oda
+Olaf - 1 - Olaf
+Oleg - 1 - Oleg
+Otto - 1 - Otto
+Otton - 1 - Otton
+Paula - 1 - Paula
+Piotr - 1 - Piotr
+Pius - 1 - Pius
+Roch - 1 - Roch
+Saul - 1 - Saul
+Wit - 1 - Wit
+aba - 1 - Saba
+abia - 1 - Fabia
+abian - 1 - Fabian
+abin - 1 - Sabin
+acek - 1 - Jacek
+achim - 1 - Joachim
+achy - 1 - Eustachy
+aciej - 1 - Maciej
+acy - 1 - Ignacy
+ada - 1 - Konrada
+adek - 1 - Radek
+adeusz - 1 - Tadeusz
+adim - 1 - Wadim
+adiusz - 1 - Arkadiusz
+ady - 1 - Arkady
+afael - 1 - Rafael
+afał - 1 - Rafał
+afin - 1 - Serafin
+aham - 1 - Abraham
+ahum - 1 - Nahum
+aja - 1 - Maja
+ajasz - 1 - Izajasz
+akub - 1 - Jakub
+alis - 1 - Paschalis
+alla - 1 - Galla
+alomea - 1 - Salomea
+amian - 1 - Damian
+amil - 1 - Kamil
+amin - 1 - Beniamin
+amon - 1 - Ramon
+amuel - 1 - Samuel
+ania - 1 - Stefania
+aniel - 1 - Daniel
+anuel - 1 - Emanuel
+anusz - 1 - Janusz
+aras - 1 - Taras
+arek - 1 - Marek
+arian - 1 - Marian
+arin - 1 - Karin
+arol - 1 - Karol
+asyl - 1 - Wasyl
+ateusz - 1 - Mateusz
+atol - 1 - Anatol
+ator - 1 - Salwator
+aweł - 1 - Paweł
+awid - 1 - Dawid
+ażej - 1 - Błażej
+bin - 1 - Albin
+brecht - 1 - Albrecht
+cel - 1 - Marcel
+ciech - 1 - Wojciech
+cin - 1 - Marcin
+cjan - 1 - Marcjan
+cyz - 1 - Narcyz
+der - 1 - Aleksander
+don - 1 - Abdon
+drzej - 1 - Andrzej
+ebiusz - 1 - Euzebiusz
+echa - 1 - Wojciecha
+edeon - 1 - Gedeon
+edykt - 1 - Benedykt
+efa - 1 - Genowefa
+efan - 1 - Stefan
+efons - 1 - Ildefons
+egild - 1 - Hermenegild
+egorz - 1 - Grzegorz
+eja - 1 - Nadzieja
+eka - 1 - Rebeka
+eli - 1 - Marceli
+eliks - 1 - Feliks
+ema - 1 - Jarema
+emar - 1 - Waldemar
+emens - 1 - Klemens
+emi - 1 - Jeremi
+emiasz - 1 - Jeremiasz
+emysł - 1 - Przemysł
+eneusz - 1 - Ireneusz
+enia - 1 - Eugenia
+enis - 1 - Denis
+eniusz - 1 - Eugeniusz
+enon - 1 - Zenon
+epan - 1 - Szczepan
+erald - 1 - Gerald
+erard - 1 - Gerard
+erian - 1 - Walerian
+eryk - 1 - Fryderyk
+eryn - 1 - Seweryn
+erzy - 1 - Jerzy
+esa - 1 - Teresa
+eszek - 1 - Leszek
+etan - 1 - Kajetan
+ewa - 1 - Zbigniewa
+ewin - 1 - Lewin
+fgang - 1 - Wolfgang
+fin - 1 - Delfin
+fons - 1 - Alfons
+gar - 1 - Edgar
+gel - 1 - Angel
+gia - 1 - Georgia
+gierd - 1 - Olgierd
+gin - 1 - Longin
+giusz - 1 - Sergiusz
+got - 1 - Margot
+grid - 1 - Ingrid
+helm - 1 - Wilhelm
+hold - 1 - Reinhold
+ichał - 1 - Michał
+idia - 1 - Lidia
+idon - 1 - Gwidon
+iga - 1 - Jadwiga
+igail - 1 - Abigail
+igia - 1 - Eligia
+ila - 1 - Kamila
+ilia - 1 - Emilia
+ilip - 1 - Filip
+illa - 1 - Lilla
+ima - 1 - Joachima
+imir - 1 - Stanimir
+iner - 1 - Rainer
+inia - 1 - Wirginia
+inik - 1 - Dominik
+iriam - 1 - Miriam
+iron - 1 - Miron
+iryn - 1 - Zefiryn
+irył - 1 - Kirył
+isza - 1 - Zawisza
+iszek - 1 - Franciszek
+itold - 1 - Witold
+iwia - 1 - Oliwia
+izy - 1 - Dionizy
+iłosz - 1 - Miłosz
+kar - 1 - Oskar
+ko - 1 - Mieszko
+men - 1 - Carmen
+munt - 1 - Zygmunt
+mut - 1 - Helmut
+na - 1 - Bogna
+nard - 1 - Bernard
+nel - 1 - Kornel
+ner - 1 - Werner
+nest - 1 - Ernest
+niew - 1 - Zbigniew
+nold - 1 - Arnold
+nus - 1 - Magnus
+ny - 1 - Szczęsny
+obert - 1 - Robert
+obiasz - 1 - Tobiasz
+odest - 1 - Modest
+odor - 1 - Teodor
+ofa - 1 - Krzysztofa
+ofil - 1 - Teofil
+oger - 1 - Roger
+okop - 1 - Prokop
+oland - 1 - Roland
+oleon - 1 - Napoleon
+olit - 1 - Hipolit
+oma - 1 - Toma
+oman - 1 - Roman
+omasz - 1 - Tomasz
+omeo - 1 - Romeo
+omiej - 1 - Bartłomiej
+omon - 1 - Salomon
+omuald - 1 - Romuald
+onard - 1 - Leonard
+onasz - 1 - Jonasz
+oni - 1 - Antoni
+onid - 1 - Leonid
+onim - 1 - Hieronim
+onin - 1 - Antonin
+oniusz - 1 - Apoloniusz
+opold - 1 - Leopold
+oris - 1 - Doris
+orys - 1 - Borys
+ota - 1 - Dorota
+oteusz - 1 - Tymoteusz
+owit - 1 - Ziemowit
+ołaj - 1 - Mikołaj
+oży - 1 - Ambroży
+par - 1 - Gaspar
+pia - 1 - Olimpia
+rad - 1 - Konrad
+recht - 1 - Ruprecht
+riel - 1 - Gabriel
+sa - 1 - Feliksa
+son - 1 - Samson
+stut - 1 - Kiejstut
+sy - 1 - Aleksy
+sym - 1 - Maksym
+tan - 1 - Tristan
+tap - 1 - Ostap
+taw - 1 - Gustaw
+tof - 1 - Krzysztof
+told - 1 - Bertold
+tosz - 1 - Bartosz
+tram - 1 - Bertram
+trand - 1 - Bertrand
+tur - 1 - Artur
+tus - 1 - Festus
+uben - 1 - Ruben
+ubert - 1 - Hubert
+ucy - 1 - Pafnucy
+udolf - 1 - Rudolf
+ugo - 1 - Hugo
+ugosz - 1 - Długosz
+ukasz - 1 - Łukasz
+ula - 1 - Urszula
+ulia - 1 - Julia
+ulian - 1 - Julian
+uliusz - 1 - Juliusz
+umił - 1 - Bogumił
+uno - 1 - Bruno
+unon - 1 - Brunon
+upert - 1 - Rupert
+ura - 1 - Bonawentura
+urand - 1 - Jurand
+usza - 1 - Tadeusza
+uszan - 1 - Duszan
+wald - 1 - Oswald
+ward - 1 - Edward
+wia - 1 - Sylwia
+wik - 1 - Ludwik
+ycy - 1 - Maurycy
+ycze - 1 - Beatrycze
+ydar - 1 - Bożydar
+ydion - 1 - Spirydion
+ydor - 1 - Izydor
+yli - 1 - Bazyli
+ylia - 1 - Otylia
+ymeon - 1 - Symeon
+ymitr - 1 - Dymitr
+ynand - 1 - Ferdynand
+yniec - 1 - Wawrzyniec
+yrus - 1 - Cyrus
+yszard - 1 - Ryszard
+ytus - 1 - Tytus
+zi - 1 - Idzi
+zy - 1 - Alojzy
+óża - 1 - Róża

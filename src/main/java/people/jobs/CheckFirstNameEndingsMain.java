@@ -1,7 +1,11 @@
-package people.dict;
+package people.jobs;
 
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.Arrays;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
@@ -10,7 +14,10 @@ import java.util.Map.Entry;
 import java.util.TreeMap;
 import java.util.stream.Collectors;
 
-import people.graph.NamesDictionary;
+import people.dict.NamesDictionary;
+import people.dict.PhoneConst;
+import people.dict.WordAnalyzer;
+import people.dict.model.PersonName;
 
 public class CheckFirstNameEndingsMain {
 
@@ -38,17 +45,39 @@ public class CheckFirstNameEndingsMain {
 		}
 	}
 	
-	private static Map<Boolean, Map<String, EndingData>> endings = new TreeMap<>(); 
+	private static Map<Boolean, Map<String, EndingData>> endings = new TreeMap<>();
+	private Map<String, PersonName> dict; 
+	
+	private void loadFromFile() {
+		
+		try {
+			dict = new HashMap<String, PersonName>();
+			
+			Files.lines(Paths.get("D:/dev/workspace/people.graph/imiona_popularnosci.txt"))
+				.forEach( (p) -> {
+					if (p!=null) {
+						String[] s = p.split("\\s+");
+						if (s != null && s.length > 1)
+							dict.put(s[0], new PersonName(s[0]));
+					}
+				} ); 
+				
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+	}
 	
 	public void start() {
 		
 		
-		Map<String, FirstName> dict = NamesDictionary.getNamesDict();
+//		dict = NamesDictionary.getNamesDict();
+		loadFromFile();
 		
-		Iterator<Entry<String, FirstName>> iter = dict.entrySet().iterator();
+		Iterator<Entry<String, PersonName>> iter = dict.entrySet().iterator();
 		
 		while (iter.hasNext()) {
-			Entry<String, FirstName> item = iter.next();
+			Entry<String, PersonName> item = iter.next();
 			
 			String firstName = item.getKey();
 			String[] syllables = WordAnalyzer.splitWordIntoSyllable(firstName);
@@ -70,10 +99,10 @@ public class CheckFirstNameEndingsMain {
 						}
 					}
 				}
-				EndingData data = endings.get(item.getValue().sex).get(ending);
+				EndingData data = endings.get(item.getValue().isMale()).get(ending);
 				if (data == null) {
 					data = new EndingData(ending);
-					endings.get(item.getValue().sex).put(ending, data);
+					endings.get(item.getValue().isMale()).put(ending, data);
 				}
 				data.add(firstName);
 			}
@@ -108,7 +137,8 @@ public class CheckFirstNameEndingsMain {
 		endings.put(true, new TreeMap<String, EndingData> ());
 		
 		try {
-			NamesDictionary.loadNamesFromResource();
+			NamesDictionary dict = new NamesDictionary();
+			dict.loadNamesFromResource();
 		} catch (IOException e) {
 			e.printStackTrace();
 			return;

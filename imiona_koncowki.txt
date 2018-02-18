@@ -1,0 +1,731 @@
+awa - 77 - Chwalisława, Krzesisława, Dobrosława, Więcesława, Radzisława, Lesława, Wrócisława, Lechosława, Trzebisława, Borzysława
+ina - 51 - Marcelina, Marina, Dina, Adelina, Kallina, Irmina, Paulina, Ewelina, Michalina, Georgina
+yna - 34 - Augustyna, Leontyna, Albertyna, Honoryna, Geraldyna, Wiktoryna, Blandyna, Klaudyna, Klementyna, Katarzyna
+da - 28 - Leonarda, Adelajda, Oswalda, Ganda, Romualda, Gerarda, Edmunda, Rajmunda, Hildegarda, Matylda
+ana - 24 - Gracjana, Oksana, Diana, Krystiana, Bogdana, Liliana, Dajana, Tacjana, Kasjana, Emiliana
+ela - 18 - Rafaela, Pamela, Angela, Marcela, Domicela, Gabriela, Izabela, Samuela, Daniela, Adela
+anna - 17 - Tacjanna, Marianna, Ozanna, Julianna, Joanna, Bibianna, Adrianna, Marcjanna, Dianna, Hanna
+ena - 16 - Madlena, Helena, Filomena, Telimena, Lena, Milena, Ksymena, Bożena, Marzena, Marlena
+ta - 16 - Marta, Berta, Huberta, Augusta, Lamberta, Innocenta, Jolanta, Hiacynta, Modesta, Norberta
+ja - 14 - Anastazja, Lukrecja, Alicja, Ignacja, Patrycja, Teodozja, Łucja, Felicja, Aspazja, Gracja
+eta - 13 - Areta, Aneta, Bernardeta, Greta, Bernadeta, Elżbieta, Żaneta, Margareta, Amiceta, Arleta
+ora - 13 - Flora, Debora, Teodora, Nora, Ścibora, Minodora, Zora, Aurora, Lora, Czcibora
+ira - 12 - Kira, Chwalimira, Sławomira, Zelmira, Świętomira, Elwira, Niemira, Lubomira, Mira, Dobromira
+iła - 12 - Dobromiła, Miła, Radomiła, Bratumiła, Lubomiła, Neomiła, Ludmiła, Ludomiła, Bogumiła, Więcemiła
+ita - 10 - Marita, Anita, Lolita, Talita, Julita, Jowita, Nikita, Hipolita, Benita, Rita
+na - 10 - Berna, Świętochna, Materna, Dagna, Ariadna, Bogna, Benigna, Jagna, Szczęsna, Dobrochna
+ata - 9 - Fortunata, Renata, Agata, Liberata, Honorata, Jurata, Małgorzata, Donata, Amata
+ara - 8 - Klara, Waldemara, Sara, Dagmara, Tamara, Barbara, Warwara, Cezara
+etta - 8 - Wioletta, Bernadetta, Violetta, Marietta, Julietta, Iwetta, Arletta, Loretta
+ika - 8 - Marika, Dominika, Eunika, Weronika, Angelika, Ludwika, Berenika, Monika
+ka - 8 - Franciszka, Blanka, Halka, Agnieszka, Pryska, Halszka, Toska, Dąbrówka
+ma - 8 - Kosma, Dyzma, Erazma, Irma, Norma, Wilma, Alma, Selma
+era - 7 - Sewera, Wera, Wiera, Sulimiera, Kazimiera, Estera, Ksawera
+ida - 7 - Taida, Ingrida, Leonida, Aida, Dalida, Dawida, Brygida
+ola - 7 - Boguwola, Wiola, Mariola, Fabiola, Karola, Pola, Lucjola
+alia - 6 - Eulalia, Rozalia, Natalia, Amalia, Dalia, Idalia
+eda - 6 - Andromeda, Manfreda, Beda, Alfreda, Diomeda, Prakseda
+elia - 6 - Kordelia, Aurelia, Kamelia, Kornelia, Amelia, Ofelia
+enia - 6 - Ifigenia, Hermenia, Milenia, Gardenia, Eugenia, Ksenia
+ona - 6 - Zenona, Ramona, Leona, Aldona, Ilona, Iwona
+yka - 6 - Henryka, Scholastyka, Teodoryka, Ulryka, Fryderyka, Eryka
+cja - 5 - Konstancja, Laurencja, Klemencja, Gaudencja, Emerencja
+eria - 5 - Waleria, Glikeria, Dezyderia, Pulcheria, Asteria
+onia - 5 - Leonia, Petronia, Sonia, Sydonia, Apolonia
+yda - 5 - Fryda, Bryda, Zygfryda, Iryda, Izyda
+yta - 5 - Judyta, Felicyta, Edyta, Zyta, Afrodyta
+aria - 4 - Hilaria, Maria, Januaria, Daria
+ella - 4 - Mirabella, Izabella, Stella, Mirella
+ga - 4 - Kinga, Inga, Olga, Ingeborga
+ila - 4 - Teofila, Kamila, Dalila, Odila
+illa - 4 - Odilla, Kamilla, Lilla, Sybilla
+iza - 4 - Eliza, Liza, Luiza, Heloiza
+uta - 4 - Danuta, Biruta, Boguta, Ruta
+ania - 3 - Epifania, Stefania, Melania
+ega - 3 - Mironiega, Dobroniega, Wyszeniega
+fa - 3 - Adolfa, Rudolfa, Nimfa
+iga - 3 - Eliga, Jadwiga, Szeliga
+oda - 3 - Jagoda, Loda, Metoda
+oma - 3 - Paloma, Roma, Toma
+ota - 3 - Szarlota, Dorota, Żegota
+ula - 3 - Urszula, Kordula, Zula
+ada - 2 - Diomada, Konrada
+adia - 2 - Nadia, Leokadia
+aja - 2 - Kaja, Maja
+awia - 2 - Flawia, Oktawia
+dra - 2 - Aleksandra, Sandra
+echa - 2 - Bożeciecha, Wojciecha
+efa - 2 - Józefa, Genowefa
+ema - 2 - Jarema, Enema
+esa - 2 - Teresa, Wenesa
+igia - 2 - Ligia, Eligia
+inia - 2 - Herminia, Wirginia
+issa - 2 - Bazylissa, Raissa
+isza - 2 - Aisza, Zawisza
+iwia - 2 - Liwia, Oliwia
+ocha - 2 - Dobrocha, Jewdocha
+ofia - 2 - Zofia, Sofia
+okia - 2 - Eudokia, Ewdokia
+oria - 2 - Wiktoria, Gloria
+ria - 2 - Adria, Demetria
+sja - 2 - Eudoksja, Hortensja
+uda - 2 - Gertruda, Juda
+ura - 2 - Isaura, Bonawentura
+ylia - 2 - Cecylia, Otylia
+ylla - 2 - Lucylla, Pryscylla
+ysa - 2 - Klarysa, Larysa
+za - 2 - Ilza, Alojza
+Ada - 1 - Ada
+Aga - 1 - Aga
+Amadea - 1 - Amadea
+Anna - 1 - Anna
+Beata - 1 - Beata
+Bończa - 1 - Bończa
+Edda - 1 - Edda
+Emma - 1 - Emma
+Ewa - 1 - Ewa
+Fausta - 1 - Fausta
+Ida - 1 - Ida
+Iga - 1 - Iga
+Ilia - 1 - Ilia
+Ita - 1 - Ita
+Iwa - 1 - Iwa
+Klaudia - 1 - Klaudia
+Laura - 1 - Laura
+Lea - 1 - Lea
+Maura - 1 - Maura
+Oda - 1 - Oda
+Orchidea - 1 - Orchidea
+Paula - 1 - Paula
+Pia - 1 - Pia
+aba - 1 - Saba
+abia - 1 - Fabia
+agia - 1 - Pelagia
+aka - 1 - Cyriaka
+alla - 1 - Galla
+alomea - 1 - Salomea
+aris - 1 - Damaris
+asza - 1 - Natasza
+aza - 1 - Laza
+ała - 1 - Boguchwała
+eba - 1 - Batszeba
+ebia - 1 - Euzebia
+eja - 1 - Nadzieja
+eka - 1 - Rebeka
+emia - 1 - Eufemia
+etua - 1 - Perpetua
+ewa - 1 - Zbigniewa
+gia - 1 - Georgia
+idia - 1 - Lidia
+igail - 1 - Abigail
+ilia - 1 - Emilia
+ima - 1 - Joachima
+itta - 1 - Ditta
+la - 1 - Tekla
+obia - 1 - Zenobia
+ofa - 1 - Krzysztofa
+olia - 1 - Anatolia
+olomea - 1 - Bartolomea
+onna - 1 - Nonna
+oris - 1 - Doris
+osza - 1 - Lubosza
+pia - 1 - Olimpia
+ra - 1 - Kleopatra
+sa - 1 - Feliksa
+sta - 1 - Kaliksta
+tia - 1 - Cyntia
+uba - 1 - Luba
+ulia - 1 - Julia
+usza - 1 - Tadeusza
+wia - 1 - Sylwia
+ydia - 1 - Placydia
+yla - 1 - Maryla
+ywia - 1 - Żywia
+yza - 1 - Narcyza
+yła - 1 - Gawryła
+óża - 1 - Róża
+ław - 110 - Trzebisław, Więczysław, Tomisław, Będzisław, Przemysław, Borysław, Cierpisław, Namysław, Borzysław, Wodzisław
+imir - 27 - Włodzimir, Zbroimir, Unimir, Spycimir, Rościmir, Będzimir, Godzimir, Wolimir, Sulimir, Bronimir
+omir - 22 - Ludomir, Częstomir, Drogomir, Sławomir, Dragomir, Lubomir, Sądomir, Radomir, Ciechomir, Tomir
+niew - 16 - Przybygniew, Lutogniew, Mścigniew, Mirogniew, Częstogniew, Wszegniew, Dobrogniew, Zbigniew, Dobiegniew, Jarogniew
+jusz - 15 - Achacjusz, Nemezjusz, Lucjusz, Benicjusz, Teodozjusz, Tacjusz, Horacjusz, Łucjusz, Patrycjusz, Winicjusz
+cjusz - 14 - Gaudencjusz, Auksencjusz, Florencjusz, Konstancjusz, Gorgoncjusz, Leoncjusz, Prudencjusz, Brykcjusz, Frumencjusz, Wenancjusz
+tyn - 11 - Krystyn, Ernestyn, Justyn, Konstantyn, Klementyn, Walentyn, Augustyn, Florentyn, Martyn, Celestyn
+bert - 10 - Lambert, Gwalbert, Engelbert, Albert, Norbert, Egbert, Adalbert, Humbert, Gilbert, Herbert
+jan - 10 - Domicjan, Łucjan, Felicjan, Dacjan, Fabrycjan, Kasjan, Gracjan, Tycjan, Wespazjan, Lucjan
+ty - 10 - Florenty, Gaudenty, Kalasanty, Kanty, Laurenty, Walenty, Jacenty, Innocenty, Konstanty, Wincenty
+emir - 9 - Wszemir, Chociemir, Dalemir, Czesemir, Dobiemir, Bolemir, Wyszemir, Niemir, Więcemir
+ibor - 9 - Racibor, Ścibor, Czcibor, Zdzibor, Myślibor, Włościbor, Cibor, Sulibor, Mścibor
+omysł - 9 - Radomysł, Lutomysł, Trzebomysł, Witomysł, Lubomysł, Drogomysł, Ninomysł, Dobromysł, Siemomysł
+iwoj - 8 - Wróciwoj, Zdziwoj, Broniwoj, Budziwoj, Włodziwoj, Suliwoj, Radziwoj, Sędziwoj
+ymir - 8 - Dzierżymir, Dobrymir, Przybymir, Władymir, Tworzymir, Borzymir, Cieszymir, Strzeżymir
+acy - 6 - Ignacy, Achacy, Pankracy, Bonifacy, Horacy, Serwacy
+azy - 6 - Damazy, Protazy, Anastazy, Afanazy, Gerwazy, Atanazy
+imierz - 6 - Włodzimierz, Sulimierz, Kazimierz, Godzimierz, Radzimierz, Skarbimierz
+omił - 6 - Ludomił, Radomił, Drogomił, Tomił, Dobromił, Witomił
+owit - 6 - Siemowit, Radowit, Miłowit, Dobrowit, Ziemowit, Trzebowit
+win - 6 - Salwin, Edwin, Irwin, Erwin, Malwin, Sylwin
+ary - 5 - Apolinary, Hilary, Makary, January, Cezary
+bor - 5 - Blizbor, Nadbor, Wojbor, Przedbor, Sambor
+ebor - 5 - Bolebor, Wszebor, Chociebor, Bożebor, Dalebor
+eciech - 5 - Świeciech, Szwieciech, Sieciech, Wszeciech, Bożeciech
+eriusz - 5 - Dezyderiusz, Asteriusz, Sylweriusz, Waleriusz, Tyberiusz
+ariusz - 4 - Dariusz, Cezariusz, Euchariusz, Mariusz
+emił - 4 - Siestrzemił, Wszemił, Przemił, Więcemił
+ery - 4 - Ksawery, Sylwery, Walery, Dezydery
+hard - 4 - Gerhard, Eberhard, Erhard, Gebhard
+ilian - 4 - Maksymilian, Emilian, Lilian, Kilian
+irad - 4 - Sulirad, Siemirad, Gościrad, Czcirad
+mir - 4 - Stojmir, Mojmir, Nadmir, Wojmir
+obor - 4 - Lutobor, Świętobor, Częstobor, Sławobor
+ogost - 4 - Radogost, Lubogost, Miłogost, Dobrogost
+orian - 4 - Wiktorian, Florian, Dorian, Zorian
+ryk - 4 - Patryk, Rodryk, Ulryk, Henryk
+sław - 4 - Stojsław, Dersław, Wojsław, Dziersław
+ywoj - 4 - Bożywoj, Strzeżywoj, Przybywoj, Borzywoj
+alis - 3 - Paschalis, Natalis, Witalis
+amir - 3 - Nieznamir, Niedamir, Domamir
+dan - 3 - Jordan, Bohdan, Bogdan
+eli - 3 - Marceli, Korneli, Aureli
+elin - 3 - Wendelin, Ewelin, Marcelin
+emysł - 3 - Przemysł, Bolemysł, Uniemysł
+eryk - 3 - Emeryk, Fryderyk, Roderyk
+ezy - 3 - Galezy, Salezy, Franciszek Salezy
+fryd - 3 - Gotfryd, Zygfryd, Godfryd
+man - 3 - Norman, Herman, German
+obert - 3 - Rygobert, Dagobert, Robert
+oniusz - 3 - Apoloniusz, Sofroniusz, Petroniusz
+oriusz - 3 - Wiktoriusz, Honoriusz, Liboriusz
+per - 3 - Prosper, Kasper, Kacper
+rian - 3 - Adrian, Cyprian, Hadrian
+tian - 3 - Krystian, Chrystian, Sebastian
+tor - 3 - Kastor, Nestor, Wiktor
+ycy - 3 - Patrycy, Maurycy, Fabrycy
+abasz - 2 - Barnabasz, Barabasz
+abin - 2 - Sabin, Gabin
+adeusz - 2 - Amadeusz, Tadeusz
+amon - 2 - Ramon, Paramon
+aniusz - 2 - Albaniusz, Epifaniusz
+atan - 2 - Jonatan, Natan
+aton - 2 - Agaton, Platon
+aweł - 2 - Paweł, Gaweł
+awian - 2 - Flawian, Oktawian
+awiusz - 2 - Flawiusz, Oktawiusz
+awoj - 2 - Nawoj, Sławoj
+ban - 2 - Alban, Urban
+bin - 2 - Balbin, Albin
+dyn - 2 - Blandyn, Bernardyn
+eliusz - 2 - Korneliusz, Aureliusz
+emi - 2 - Noemi, Jeremi
+emiasz - 2 - Jeremiasz, Nehemiasz
+emon - 2 - Filemon, Artemon
+enat - 2 - Asenat, Renat
+eniusz - 2 - Arseniusz, Eugeniusz
+enon - 2 - Benon, Zenon
+erad - 2 - Wszerad, Więcerad
+erian - 2 - Sewerian, Walerian
+ewin - 2 - Lewin, Kewin
+ewit - 2 - Siestrzewit, Uniewit
+fred - 2 - Manfred, Alfred
+igiusz - 2 - Remigiusz, Eligiusz
+iliusz - 2 - Wirgiliusz, Emiliusz
+iryn - 2 - Zefiryn, Kwiryn
+ko - 2 - Zbyszko, Mieszko
+mund - 2 - Rajmund, Edmund
+nold - 2 - Arnold, Rajnold
+nus - 2 - Benignus, Magnus
+ociech - 2 - Dobrociech, Radociech
+odor - 2 - Teodor, Heliodor
+olin - 2 - Karolin, Frydolin
+omeusz - 2 - Boromeusz, Karol Boromeusz
+omierz - 2 - Dobromierz, Lubomierz
+onald - 2 - Ronald, Donald
+onieg - 2 - Mironieg, Dobronieg
+onik - 2 - Agatonik, Andonik
+opełk - 2 - Jaropełk, Świętopełk
+oryn - 2 - Wiktoryn, Floryn
+riusz - 2 - Demetriusz, Dymitriusz
+rog - 2 - Siemiodrog, Uniedrog
+rych - 2 - Dytrych, Ulrych
+sjusz - 2 - Eudoksjusz, Hortensjusz
+ter - 2 - Walter, Sylwester
+tus - 2 - Festus, Artus
+umił - 2 - Bratumił, Bogumił
+ydion - 2 - Irydion, Spirydion
+yliusz - 2 - Bazyliusz, Cecyliusz
+ymon - 2 - Szymon, Tymon
+ynian - 2 - Martynian, Justynian
+yrad - 2 - Cieszyrad, Przybyrad
+zisz - 2 - Budzisz, Godzisz
+Abel - 1 - Abel
+Adam - 1 - Adam
+Adaukt - 1 - Adaukt
+Addar - 1 - Addar
+Ado - 1 - Ado
+Adolf - 1 - Adolf
+Ageusz - 1 - Ageusz
+Alan - 1 - Alan
+Alf - 1 - Alf
+Ali - 1 - Ali
+Amin - 1 - Amin
+Amon - 1 - Amon
+Amos - 1 - Amos
+Ariel - 1 - Ariel
+Aron - 1 - Aron
+August - 1 - August
+Axel - 1 - Axel
+Bean - 1 - Bean
+Beatryks - 1 - Beatryks
+Beatus - 1 - Beatus
+Bjorn - 1 - Bjorn
+Burchard - 1 - Burchard
+Czech - 1 - Czech
+Dan - 1 - Dan
+Egon - 1 - Egon
+Eliasz - 1 - Eliasz
+Emil - 1 - Emil
+Enoch - 1 - Enoch
+Erast - 1 - Erast
+Erazm - 1 - Erazm
+Eryk - 1 - Eryk
+Ewald - 1 - Ewald
+Faust - 1 - Faust
+Faustyn - 1 - Faustyn
+Gall - 1 - Gall
+Goar - 1 - Goar
+Igor - 1 - Igor
+Inez - 1 - Inez
+Iwan - 1 - Iwan
+Iwo - 1 - Iwo
+Iwon - 1 - Iwon
+Izaak - 1 - Izaak
+Jan - 1 - Jan
+Job - 1 - Job
+Joel - 1 - Joel
+Jędrzej - 1 - Jędrzej
+Kain - 1 - Kain
+Karp - 1 - Karp
+Kir - 1 - Kir
+Klaudian - 1 - Klaudian
+Klaudiusz - 1 - Klaudiusz
+Klaus - 1 - Klaus
+Klet - 1 - Klet
+Kurt - 1 - Kurt
+Leander - 1 - Leander
+Lech - 1 - Lech
+Leon - 1 - Leon
+Lew - 1 - Lew
+Maur - 1 - Maur
+Mauryn - 1 - Mauryn
+Melchior - 1 - Melchior
+Micheasz - 1 - Micheasz
+Naum - 1 - Naum
+Noe - 1 - Noe
+Odil - 1 - Odil
+Odo - 1 - Odo
+Odon - 1 - Odon
+Olaf - 1 - Olaf
+Olech - 1 - Olech
+Oleg - 1 - Oleg
+Otto - 1 - Otto
+Otton - 1 - Otton
+Ozeasz - 1 - Ozeasz
+Paulin - 1 - Paulin
+Piotr - 1 - Piotr
+Pius - 1 - Pius
+Priam - 1 - Priam
+Prot - 1 - Prot
+RenÃ© - 1 - RenÃ©
+Roch - 1 - Roch
+Rut - 1 - Rut
+Saul - 1 - Saul
+Ubald - 1 - Ubald
+Uriasz - 1 - Uriasz
+Wawrzyn - 1 - Wawrzyn
+Wit - 1 - Wit
+aba - 1 - Barnaba
+abeusz - 1 - Machabeusz
+abian - 1 - Fabian
+abor - 1 - Gabor
+acek - 1 - Jacek
+acheusz - 1 - Zacheusz
+achim - 1 - Joachim
+achiusz - 1 - Eustachiusz
+achy - 1 - Eustachy
+aciej - 1 - Maciej
+acyd - 1 - Placyd
+acynt - 1 - Hiacynt
+adek - 1 - Radek
+adim - 1 - Wadim
+adiusz - 1 - Arkadiusz
+ady - 1 - Arkady
+adyn - 1 - Konradyn
+afael - 1 - Rafael
+afat - 1 - Jozafat
+afał - 1 - Rafał
+afin - 1 - Serafin
+agiusz - 1 - Pelagiusz
+aham - 1 - Abraham
+ahum - 1 - Nahum
+ajasz - 1 - Izajasz
+ajus - 1 - Kajus
+ajusz - 1 - Gajusz
+akosz - 1 - Pakosz
+akub - 1 - Jakub
+aleon - 1 - Pantaleon
+alian - 1 - Witalian
+alikst - 1 - Kalikst
+alon - 1 - Absalon
+amert - 1 - Mamert
+amian - 1 - Damian
+amil - 1 - Kamil
+amin - 1 - Beniamin
+amuel - 1 - Samuel
+amysł - 1 - Niezamysł
+anael - 1 - Natanael
+ani - 1 - Epifani
+aniasz - 1 - Ananiasz
+aniel - 1 - Daniel
+anik - 1 - Germanik
+anisz - 1 - Danisz
+anor - 1 - Nikanor
+anuel - 1 - Emanuel
+anusz - 1 - Janusz
+anut - 1 - Kanut
+apit - 1 - Agapit
+arad - 1 - Domarad
+aras - 1 - Taras
+arat - 1 - Domarat
+arek - 1 - Marek
+arian - 1 - Marian
+ariasz - 1 - Zachariasz
+arin - 1 - Karin
+arol - 1 - Karol
+arys - 1 - Parys
+aryst - 1 - Ewaryst
+asyl - 1 - Wasyl
+asym - 1 - Harasym
+ateusz - 1 - Mateusz
+atol - 1 - Anatol
+ator - 1 - Salwator
+awid - 1 - Dawid
+awin - 1 - Sawin
+awit - 1 - Domawit
+awosz - 1 - Sławosz
+azar - 1 - Baltazar
+azarz - 1 - Łazarz
+azon - 1 - Jazon
+azyl - 1 - Bazyl
+ażej - 1 - Błażej
+brecht - 1 - Albrecht
+cel - 1 - Marcel
+cer - 1 - Balcer
+ciech - 1 - Wojciech
+cin - 1 - Marcin
+cjal - 1 - Marcjal
+cjan - 1 - Marcjan
+cyz - 1 - Narcyz
+der - 1 - Aleksander
+dian - 1 - Kordian
+diasz - 1 - Abdiasz
+don - 1 - Abdon
+drad - 1 - Kondrad
+drasz - 1 - Ezdrasz
+drat - 1 - Kondrat
+dron - 1 - Andron
+drzej - 1 - Andrzej
+dyd - 1 - Kandyd
+ebald - 1 - Sebald
+ebiusz - 1 - Euzebiusz
+ebąd - 1 - Wszebąd
+echasz - 1 - Czechasz
+echiel - 1 - Ezechiel
+echoń - 1 - Czechoń
+ecyl - 1 - Cecyl
+eczest - 1 - Boleczest
+edard - 1 - Medard
+edeon - 1 - Gedeon
+edeusz - 1 - Amedeusz
+edykt - 1 - Benedykt
+efan - 1 - Stefan
+efat - 1 - Józefat
+efir - 1 - Zefir
+efons - 1 - Ildefons
+efor - 1 - Nicefor
+egar - 1 - Leodegar
+egild - 1 - Hermenegild
+egor - 1 - Dalegor
+egorz - 1 - Grzegorz
+egost - 1 - Uniegost
+ejusz - 1 - Pompejusz
+elian - 1 - Aurelian
+eliasz - 1 - Heliasz
+eliks - 1 - Feliks
+elis - 1 - Fidelis
+elly - 1 - Nelly
+elus - 1 - Angelus
+emar - 1 - Waldemar
+emens - 1 - Klemens
+ement - 1 - Klement
+emiest - 1 - Dobiemiest
+enart - 1 - Lenart
+enes - 1 - Diogenes
+eneusz - 1 - Ireneusz
+enis - 1 - Denis
+enor - 1 - Agenor
+epan - 1 - Szczepan
+erald - 1 - Gerald
+erard - 1 - Gerard
+erat - 1 - Liberat
+eron - 1 - Jeron
+eryn - 1 - Seweryn
+eryst - 1 - Eweryst
+erzy - 1 - Jerzy
+eszek - 1 - Leszek
+esąd - 1 - Sobiesąd
+etan - 1 - Kajetan
+ewer - 1 - Sewer
+ewoj - 1 - Jaczewoj
+ewosz - 1 - Gniewosz
+ezeusz - 1 - Tezeusz
+ezyp - 1 - Hegezyp
+feusz - 1 - Orfeusz
+fgang - 1 - Wolfgang
+fin - 1 - Delfin
+fons - 1 - Alfons
+for - 1 - Telesfor
+gar - 1 - Edgar
+gel - 1 - Angel
+gierd - 1 - Olgierd
+gin - 1 - Longin
+giusz - 1 - Sergiusz
+gniew - 1 - Stojgniew
+got - 1 - Margot
+grid - 1 - Ingrid
+helm - 1 - Wilhelm
+hold - 1 - Reinhold
+ibald - 1 - Wilibald
+ibert - 1 - Libert
+ibóg - 1 - Chwalibóg
+ice - 1 - Beatrice
+icet - 1 - Anicet
+ichał - 1 - Michał
+idas - 1 - Leonidas
+ides - 1 - Fides
+idon - 1 - Gwidon
+ifan - 1 - Epifan
+ifor - 1 - Nikifor
+igost - 1 - Miligost
+ikarp - 1 - Polikarp
+ike - 1 - Berenike
+ilip - 1 - Filip
+illes - 1 - Achilles
+imen - 1 - Pimen
+imił - 1 - Gościmił
+iner - 1 - Rainer
+inian - 1 - Alpinian
+inik - 1 - Dominik
+iniusz - 1 - Wirginiusz
+inus - 1 - Longinus
+iriam - 1 - Miriam
+irion - 1 - Porfirion
+iron - 1 - Miron
+irył - 1 - Kirył
+iszek - 1 - Franciszek
+itold - 1 - Witold
+itołd - 1 - Witołd
+iwier - 1 - Oliwier
+iwit - 1 - Gościwit
+iwiusz - 1 - Liwiusz
+iwój - 1 - Mściwój
+izeusz - 1 - Elizeusz
+izy - 1 - Dionizy
+iłosz - 1 - Miłosz
+jol - 1 - Lucjol
+kar - 1 - Oskar
+kolm - 1 - Malkolm
+les - 1 - Herakles
+liusz - 1 - Herakliusz
+lyk - 1 - Urlyk
+mar - 1 - Wolmar
+men - 1 - Carmen
+mes - 1 - Hermes
+munt - 1 - Zygmunt
+mut - 1 - Helmut
+nard - 1 - Bernard
+nat - 1 - Biernat
+nel - 1 - Kornel
+ner - 1 - Werner
+nest - 1 - Ernest
+niel - 1 - Otniel
+nin - 1 - Saturnin
+no - 1 - Berno
+nolf - 1 - Arnolf
+ny - 1 - Szczęsny
+obald - 1 - Teobald
+obiasz - 1 - Tobiasz
+obiusz - 1 - Zenobiusz
+obus - 1 - Probus
+ochor - 1 - Prochor
+odem - 1 - Nikodem
+odest - 1 - Modest
+ody - 1 - Metody
+ofas - 1 - Kleofas
+ofil - 1 - Teofil
+ofim - 1 - Trofim
+ofont - 1 - Ksenofont
+oger - 1 - Roger
+ogiusz - 1 - Eulogiusz
+ogort - 1 - Redogort
+ogusz - 1 - Bogusz
+ohusz - 1 - Bohusz
+okij - 1 - Mokij
+okop - 1 - Prokop
+oland - 1 - Roland
+oleon - 1 - Napoleon
+oliat - 1 - Goliat
+olit - 1 - Hipolit
+ollo - 1 - Apollo
+oman - 1 - Roman
+omar - 1 - Otomar
+omasz - 1 - Tomasz
+ome - 1 - Salome
+omeo - 1 - Romeo
+omiej - 1 - Bartłomiej
+omon - 1 - Salomon
+omuald - 1 - Romuald
+onard - 1 - Leonard
+onasz - 1 - Jonasz
+onat - 1 - Donat
+oni - 1 - Antoni
+onid - 1 - Leonid
+onim - 1 - Hieronim
+onin - 1 - Antonin
+onisz - 1 - Bronisz
+opard - 1 - Leopard
+opiusz - 1 - Eutropiusz
+opold - 1 - Leopold
+orad - 1 - Miłorad
+orat - 1 - Honorat
+ores - 1 - Dolores
+orys - 1 - Borys
+osąd - 1 - Krzywosąd
+otard - 1 - Gotard
+oter - 1 - Soter
+oteusz - 1 - Tymoteusz
+owan - 1 - Miłowan
+owid - 1 - Radowid
+owiest - 1 - Dobrowiest
+owoj - 1 - Częstowoj
+owój - 1 - Dobrowój
+ozant - 1 - Sozant
+ozar - 1 - Światozar
+ozue - 1 - Jozue
+ołaj - 1 - Mikołaj
+oży - 1 - Ambroży
+par - 1 - Gaspar
+pet - 1 - Torpet
+pełk - 1 - Przedpełk
+pin - 1 - Kryspin
+rad - 1 - Konrad
+raj - 1 - Dzierżykraj
+recht - 1 - Ruprecht
+rem - 1 - Efrem
+riel - 1 - Gabriel
+ron - 1 - Matron
+ry - 1 - Onufry
+ryg - 1 - Rodryg
+ryt - 1 - Demokryt
+sfet - 1 - Mansfet
+son - 1 - Samson
+stans - 1 - Konstans
+stus - 1 - Sykstus
+stut - 1 - Kiejstut
+swet - 1 - Manswet
+sy - 1 - Aleksy
+sym - 1 - Maksym
+syn - 1 - Ursyn
+tan - 1 - Tristan
+tap - 1 - Ostap
+tarch - 1 - Arystarch
+taw - 1 - Gustaw
+tes - 1 - Orestes
+tof - 1 - Krzysztof
+told - 1 - Bertold
+tom - 1 - Chryzostom
+tosz - 1 - Bartosz
+tram - 1 - Bertram
+trand - 1 - Bertrand
+trat - 1 - Kalistrat
+tur - 1 - Artur
+tym - 1 - Antym
+uben - 1 - Ruben
+ubert - 1 - Hubert
+ubor - 1 - Lubor
+ucen - 1 - Nepomucen
+ucy - 1 - Pafnucy
+udar - 1 - Bogudar
+udasz - 1 - Judasz
+udens - 1 - Pudens
+udolf - 1 - Rudolf
+ufin - 1 - Rufin
+ufus - 1 - Rufus
+ugo - 1 - Hugo
+ugon - 1 - Hugon
+ugosz - 1 - Długosz
+ukasz - 1 - Łukasz
+ulan - 1 - Herkulan
+ules - 1 - Herkules
+ulian - 1 - Julian
+uliusz - 1 - Juliusz
+umir - 1 - Bogumir
+unat - 1 - Fortunat
+uno - 1 - Bruno
+unon - 1 - Brunon
+upert - 1 - Rupert
+urad - 1 - Bogurad
+urand - 1 - Jurand
+uszan - 1 - Duszan
+usąd - 1 - Bogusąd
+wald - 1 - Oswald
+wan - 1 - Sylwan
+ward - 1 - Edward
+wał - 1 - Boguchwał
+wik - 1 - Ludwik
+wiusz - 1 - Sylwiusz
+woj - 1 - Przedwoj
+ybor - 1 - Cieszybor
+ycze - 1 - Beatrycze
+yczest - 1 - Przybyczest
+ydar - 1 - Bożydar
+ydor - 1 - Izydor
+ygin - 1 - Hygin
+ygor - 1 - Cieszygor
+yli - 1 - Bazyli
+ylian - 1 - Cecylian
+ylid - 1 - Bazylid
+ylis - 1 - Bazylis
+ylut - 1 - Zbylut
+ymeon - 1 - Symeon
+ymierz - 1 - Bożymierz
+ymin - 1 - Maksymin
+ymitr - 1 - Dymitr
+ymysł - 1 - Cieszymysł
+ynand - 1 - Ferdynand
+yniec - 1 - Wawrzyniec
+ynin - 1 - Martynin
+yriak - 1 - Cyriak
+yrus - 1 - Cyrus
+yryl - 1 - Cyryl
+yseusz - 1 - Odyseusz
+ysym - 1 - Felicysym
+yszard - 1 - Ryszard
+ytus - 1 - Tytus
+yzant - 1 - Chryzant
+zelm - 1 - Anzelm
+zi - 1 - Idzi
+zim - 1 - Radzim
+zy - 1 - Alojzy
+ózef - 1 - Józef
+ąbog - 1 - Dadąbog
+żesz - 1 - Mojżesz

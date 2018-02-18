@@ -1,0 +1,129 @@
+MAILE
+
+M:
+owski - 1002 - Kropkowski, Gronkowski, Wilanowski, Rymanowski, Jerzykowski, Ząbkowski, Pachnowski, Zajkowski, Stachowski, Prażmowski
+D:
+iego - 1956 - Gadowskiego, Mierzejewskiego, Kwiatkowskiego, Godlewskiego, Zaruskiego, Stryjskiego, Natansona-Leskiego, Sandomierskiego, Pendereckiego, Pasławskiego
+N:
+owskim - 254 - Węcowskim, Osuchowskim, Morzyckim-Markowskim, Gniazdowskim, Bońkowskim, Głuchowskim, Wolikowskim, Bańkowskim, Dmowskim, Raczkowskim
+
+---
+M:
+iński - 389 - Czerwiński, Bieliński, Ambroziński, Woliński, Herling-Grudziński, Chęciński, Buliński, Myciński, Modliński, Rybiński
+
+N:
+ińskim - 91 - Kopińskim, Czerwińskim, Brzezińskim, Czempińskim, Komedą-Trzcińskim, Cywińskim, Glińskim, Kosińskim, Felińskim, Strawińskim
+
+--
+M:
+alski - 75 - Chlipalski, Kochalski, Czubalski, Latalski, Fikalski, Szygalski, Pękalski, Zegalski, Wierusz-Kowalski, Rogalski
+arski - 69 - Kryska-Karski, Stolarski, Arendarski, Szarski, Mielczarski, Bojarski, Chilarski, Tarski, Janczarski, Zientarski
+awski - 67 - Dubrawski, Gosławski, Żurawski, Osóbka-Morawski, Węcławski, Wyczawski, Warszawski, Starnawski, Drawski, Pasławski
+
+--
+M:
+iecki - 73 - Lubodziecki, Mazowiecki, Zieleniecki, Daleniecki, Jasiecki, Staniecki, Boniecki, Maniecki, Hryniewiecki, Woroniecki
+
+---
+M:
+ewski - 311 - Brągoszewski, Kobuszewski, Bogoria-Zakrzewski, Modrzejewski, Wołonczewski, Padewski, Wróblewski, Komarzewski, Kiełczewski, Kraszewski
+N:
+ewskim - 85 - Staniszewskim, Bilczewskim, Miklaszewskim, Żmijewskim, Lilienfeld-Krzewskim, Wróblewskim, Tokarzewskim, Czyżewskim, Karaszewiczem-Tokarzewskim, Korpolewskim
+
+---
+M:
+owicz - 367 - Puchowicz, Krzyształowicz, Kilanowicz, Stanisławowicz, Ciechanowicz, Harasymowicz, Szpakowicz, Radziwiłłowicz, Semkowicz, Parysowicz
+---
+M:
+iewicz - 351 - Kurkiewicz, Cereniewicz, Zaskiewicz, Kagankiewicz, Leszkiewicz, Rymkiewicz, Cenckiewicz, Iwaszkiewicz, Stachiewicz, Lutkiewicz
+D:
+icza - 381 - Mańkiewicza, Jasiewicza, Trębaczkiewicza, Kochanowicza, Spasowicza, Ulewicza, Ajdukiewicza, Popkiewicza, Bogdanowicza, Zdanowicza
+N:
+iczem - 153 - Lisiewiczem, Ihnatowiczem, Juszkiewiczem, Kietliczem, Bytnerowiczem, Rozenowiczem, Bogdanowiczem, Kornowiczem, Karewiczem, Dubanowiczem
+
+
+---
+M:
+yński - 266 - Smoczyński, Kołodyński, Brzeszczyński, Bieszyński, Ratyński, Warczyński, Traczyński, Brożyński, Kawczyński, Olszyński
+---
+---
+M:
+icki - 215 - Wojnicki, Gościcki, Jaźnicki, Pawlicki, Potulicki, Małachowski-Łempicki, Suchcicki, Wiślicki, Ziemnicki, Pszenicki
+
+---
+M:
+ański - 97 - Torański, Sochański, Wołoszański, Podkański, Radwański, Karmański, Golański, Lubrański, Wański, Biegański
+
+---
+C:
+owi - 253 - Vaulinowi, Koriatowicowi, Tomaszowi, Chwastkowi, Andrzejowi, Wójcikowi, Giertychowi, Midakowi, Lipcowi, Stuhrowi
+
+D:
+era - 250 - Szyrmera, Grossera, Rychtera, Meisnera, Rymera, Schloczera, Müllera, Brennera, Laskera, Balzera
+
+D:
+ego - 181 - Konstantego, Rodego, Watzenrodego, Mottego, Złotego, Kolbego, Brodatego, Mikkego, Borowego, Koniecznego
+
+
+M:
+ecki - 156 - Kozielecki, Kosecki, Młodecki, Żytecki, Kołecki, Iwanecki, Zamecki, Klimecki, Grubecki, Wodecki
+
+C:
+iemu - 232 - Zaleskiemu, Wyszkowskiemu, Skibińskiemu, Sucharskiemu, Bieleckiemu, Broniewskiemu, Kaczmarskiemu, Kwiatkowskiemu, Kiernikowskiemu, Kulczyńskiemu
+
+D(maile) M(female)
+owa - 214 - Musatowa, Czarniakowa, Bawolikowa, Machejkowa, Antonowa, Telakowa, Kadowa, Mastierkowa, Sierowa, Panfiłowa
+
+D:
+yka - 117 - Surdyka, Afrykańczyka, Walaszczyka, Urbańczyka, Leczyka, Bieńczyka, Baryka, Rydzyka, Stańczyka, Matyka
+
+D:
+ina - 115 - Suchowo-Kobylina, Kosina, Kniaźnina, Halina, Stalina, Caterina, Dolina, Michalina, Ballerina, Serafina
+
+D:
+aka - 112 - Śpiewaka, Traka, Pelaka, Pasternaka, Felczaka, Walczaka, Kozaka, Piętaka, Czaka, Rybaka
+
+D:
+ana - 106 - Reagana, Romana, Otmana, Allana, Hermana, Buridana, Wortmana, Jana, Wellmana, Rajchmana
+
+D:
+ika - 85 - Pawlika, Michalika, Wojtunika, Weronika, Kracika, Marusika, Michnika, Kłótnika, Skutnika, Orszulika
+
+
+N:
+erem - 87 - Hallerem, Tetmajerem, Preisnerem, Kunitzerem, Bäckerem, Nurnbergerem, Leitgeberem, Komenderem, Millerem, Mellerem
+
+
+FEMALE:
+
+M:
+owska - 395 - Gronkowska, Manowska, Pienkowska, Gorzechowska, Liszowska, Osnowska, Czajkowska, Kosowska, Bakowska, Benenowska
+D:
+owskiej - 163 - Otwinowskiej, Kuratowskiej, Hornowskiej, Florkowskiej, Mikułowskiej, Jędrzejowskiej, Libiszowskiej, Kalinowskiej, Mostowskiej, Czarnkowskiej
+N:
+owską - 142 - Trzeszczkowską, Krassowską, Pienkowską, Wołowską, Kaczorowską, Terlikowską, Pięknowską, Stanowską, Szatkowską, Markowską
+
+---
+M:
+ińska - 153 - Czerwińska, Bielińska, Wolińska, Mycińska, Skra-Kamińska, Gidzińska, Janiak-Jasińska, Rybińska, Rodzińska, Męcińska
+
+M:
+ewska - 137 - Wróblewska, Gilewska, Kraszewska, Znajewska, Boniszewska, Olszewska, Danilewska, Radziszewska, Paczewska, Adamczewska
+
+
+----
+M:
+yńska - 107 - Traczyńska, Olszyńska, Wojcieszyńska, Praczyńska, Woydyłło-Osiatyńska, Zamkow-Słomczyńska, Tęczyńska, Streżyńska, Żabczyńska, Ziarkiewicz-Kuczyńska
+
+---
+M:
+icka - 91 - Wojnicka, Jaźnicka, Pawlicka, Potulicka, Czuperska-Śliwicka, Bobicka, Chłopicka, Święcicka, Wodzicka, Komornicka
+
+---
+M:
+ówna - 91 - Wołodkowiczówna, Małunowiczówna, Szmigielówna, Giedyminówna, Głąbówna, Fogtówna, Wazówna, Czubówna, Rafałowiczówna, -Engelówna
+
+--
+C: D:
+owej - 76 - Wnuk-Nazarowej, Popczykowej, Buchwald-Pelcowej, Korczakowej, Kasprowiczowej, Sendlerowej, Romanowej, Perlowej, Krügerowej, Płowej
+

@@ -1,0 +1,41 @@
+# wojskowe
+kapral
+major
+podporucznik
+porucznik
+podpułkownik
+pułkownik
+generał
+
+# policyjne
+aspirant
+komisarz
+
+# kierownicze
+dyrektor
+prezes
+kierownik
+
+# urzędnicze
+wójt
+burmistrz
+prezydent
+
+# polityczne
+premier
+prezydent
+
+# kościelne
+ksiądz
+biskup
+arcybiskup
+kardynał
+papież
+
+# sędziowskie
+prokurator
+sędzia
+mecenas
+obrońca
+rejent
+

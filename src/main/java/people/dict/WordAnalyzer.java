@@ -21,7 +21,7 @@ public class WordAnalyzer {
 		}
 		//
 		
-		boolean isPrevVowels = false;
+		boolean isPrevVowel = false;
 		boolean hasSyllableVowel = false; 
 		ListIteratorEx iter = list.listExtIterator();
 		
@@ -50,7 +50,7 @@ public class WordAnalyzer {
 					isComponentConsonant = PhoneConst.isComponentConsonant(str);
 
 					// #6 - always split if a consonants is between two vowels
-					split = (i>0 && isPrevVowels && !isVowel && iter.hasNext() && iter.isNextVowel());
+					split = (i>0 && isPrevVowel && !isVowel && iter.hasNext() && iter.isNextVowel());
 					if (split) {
 						break; 
 					}
@@ -71,8 +71,8 @@ public class WordAnalyzer {
 					split |= (!isVowel && iter.hasNext() && iter.getNext().compareToIgnoreCase(str)==0);
 					
 					// Split is there is already vowel and then are two consonants
-					split |= (hasSyllableVowel && !isVowel && !isPrevVowels);
-					
+					split |= (hasSyllableVowel && !isVowel && !isPrevVowel);
+
 					if (split) break;
 
 					
@@ -85,7 +85,7 @@ public class WordAnalyzer {
 					if (cont) break;
 					
 					// #7 - two consecutive consonants can be brake between or before them 
-					split = (hasSyllableVowel && !isPrevVowels && !isVowel);
+					split = (hasSyllableVowel && !isPrevVowel && !isVowel);
 					
 					if (!split) {
 						cont = true;
@@ -101,7 +101,7 @@ public class WordAnalyzer {
 			}
 			
 			sb.append(str);
-			isPrevVowels = isVowel;
+			isPrevVowel = isVowel;
 			hasSyllableVowel |= isVowel; 
 			++i;
 			if (isVowel) {

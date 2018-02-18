@@ -1,11 +1,16 @@
 package people.graph;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.io.IOException;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map.Entry;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicLong;
-import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.apache.commons.lang.WordUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -18,19 +23,37 @@ import edu.uci.ics.crawler4j.parser.HtmlParseData;
 import edu.uci.ics.crawler4j.robotstxt.RobotstxtConfig;
 import edu.uci.ics.crawler4j.robotstxt.RobotstxtServer;
 import edu.uci.ics.crawler4j.url.WebURL;
+import lombok.SneakyThrows;
+import people.analitics.PeopleFinder;
+import people.dict.DeclinationRulesSet;
+import people.dict.NamesDictionary;
+import people.dict.model.Person;
 
 public class WikiCrawler extends WebCrawler {
 
-	private Logger log = LoggerFactory.getLogger(WikiCrawler.class);
-	
 	private static final Pattern IMAGE_EXTENSIONS = Pattern.compile(".*\\.(bmp|gif|jpg|png)$");
-
-	private HashSet<String> names = new HashSet<>();
-
-	private static AtomicLong cntPersons = new AtomicLong(0);
+	
+	private Logger peopleLogger = LoggerFactory.getLogger("PEOPLE");
+	private Logger lastNamesLogger = LoggerFactory.getLogger("LASTNAMES");
 
 	private static AtomicLong cntPages = new AtomicLong(0);
-
+	
+	private static AtomicLong cntPersonFound = new AtomicLong(0);
+	private static AtomicLong cntRelationFound = new AtomicLong(0);
+	
+	private HashMap<String, Integer> localResult = new HashMap<>();
+	
+	private static HashMap<String, Integer> globalResult = new HashMap<>();
+	
+	private ConcurrentHashMap<String, Person> allPeopleFound = new ConcurrentHashMap<>();
+	
+	private static NamesDictionary namesDict; 
+	
+	private static DeclinationRulesSet lastNameDeclRules;
+	
+	private PeopleFinder peopleFinder; 
+	
+	
 	/**
 	 * You should implement this function to specify whether the given url
 	 * should be crawled or not (based on your crawling logic).
@@ -38,17 +61,59 @@ public class WikiCrawler extends WebCrawler {
 	@Override
 	public boolean shouldVisit(Page referringPage, WebURL url) {
 		String href = url.getURL().toLowerCase();
-		// Ignore the url if it has an extension that matches our defined set of
-		// image extensions.
+
 		if (IMAGE_EXTENSIONS.matcher(href).matches()) {
 			return false;
 		}
 
-		// Only accept the url if it is in the "www.ics.uci.edu" domain and
-		// protocol is "http".
-		return href.startsWith("https://pl.wikipedia.org/");
+		if (href.startsWith("https://pl.wikipedia.org/")) {
+			if (href.matches(".+/wiki/.+:.+")) {
+				return false;
+			}
+			
+			int pos = href.lastIndexOf("/");
+			String pageResource = href.substring(pos+1, href.length());
+			
+			if (pageResource.startsWith("index.php")) {
+				return false; 
+			}
+			
+			if (pageResource != null) {
+				pos = pageResource.indexOf("_");
+				if (pos != -1) {
+					String nameCandidate = WordUtils.capitalize(pageResource.substring(0, pos));
+					if (namesDict.contains(nameCandidate)) {
+						return true;
+					}
+				}
+			}
+			
+			
+			return false;
+		}
+		
+		return false; 
 	}
 
+	@Override
+	public void onBeforeExit() {
+		synchronized(globalResult) {
+			localResult.entrySet().stream().forEach( 
+					(a) -> { 
+							globalResult.put(a.getKey(), globalResult.getOrDefault(a.getKey(), 0) + a.getValue() ); 
+							} );
+		}
+	}
+	
+
+	@Override
+	@SneakyThrows
+	public void onStart() {
+		super.onStart();
+		peopleFinder = new PeopleFinder(namesDict, lastNameDeclRules);		
+	}
+
+	
 	/**
 	 * This function is called when a page is fetched and ready to be processed
 	 * by your program.
@@ -76,39 +141,64 @@ public class WikiCrawler extends WebCrawler {
 		if (page.getParseData() instanceof HtmlParseData) {
 			HtmlParseData htmlParseData = (HtmlParseData) page.getParseData();
 			String pageTitle = extractPageTitle(htmlParseData.getTitle());
-			String text = htmlParseData.getText();
+			String pageBody = htmlParseData.getText();
+			
+			int linksPos = pageBody.lastIndexOf("Linki zewnętrzne");
+			linksPos = Math.min(linksPos == -1 ? pageBody.length() : linksPos,  pageBody.lastIndexOf("Menu nawigacyjne"));
+			linksPos = Math.min(linksPos == -1 ? pageBody.length() : linksPos,  pageBody.lastIndexOf("Tę stronę ostatnio edytowano"));			
+			if (linksPos > 0) {
+				pageBody = pageBody.substring(0, linksPos);			
+			}
+			
+//			PrintWriter pr;
+//			try {
+//				pr = new PrintWriter("./web/" + cntPages.get() + ".txt");
+//				pr.print(pageBody);
+//				pr.flush();
+//				pr.close();
+//			} catch (FileNotFoundException e) {
+//			}
+			
 //			String html = htmlParseData.getHtml();
 //			Set<WebURL> links = htmlParseData.getOutgoingUrls();
 			
-			String mainPerson = NamesDictionary.findPerson(pageTitle);
-			boolean isPersonTitle = (mainPerson != null && !mainPerson.isEmpty());
-
-			Matcher matcher = NamesDictionary.regexpPerson2.matcher(text);
-			while (matcher.find()) {
-				String name = matcher.group();
-				String firstName = matcher.group(1);
-				// String lastName = matcher.group(2);
-
-				if (NamesDictionary.NAMES.contains(firstName)) {
-					if (!names.contains(name)) {
-						cntPersons.incrementAndGet(); 
-						names.add(name);
-						
-//						logger.info(" > #{}: {} (pages: {})", cntPersons.get(), name, cntPages.get());
-						if (isPersonTitle && !mainPerson.equals(name)) {
-							logger.info("{} -> {}", mainPerson, name);
-						}
-						if (!isPersonTitle) {
-							logger.info("{} -> {}", pageTitle, name);
-						}
-					}
-
+			List<Person> personsInTitle = peopleFinder.identifyPeopleInText(pageTitle);
+			boolean isTitleAboutPerson = (personsInTitle != null && !personsInTitle.isEmpty());
+			
+			String titlePersonKey = "";
+			if (isTitleAboutPerson) {
+				Person personInTitle = personsInTitle.get(0);
+				titlePersonKey = personInTitle.toString();
+				allPeopleFound.putIfAbsent(titlePersonKey, personInTitle);	
+				peopleLogger.info( "#" + cntPersonFound.incrementAndGet() + " : " + titlePersonKey);
+				lastNamesLogger.info(personInTitle.getLastName());
+			}
+			
+			List<Person> personsInText = peopleFinder.identifyPeopleInText(pageBody);
+			
+			Iterator<Person> iteratorBody = personsInText.iterator();
+			while (iteratorBody.hasNext()) {
+				Person person = iteratorBody.next();	
+				String key = person.toString();
+				if (key.equals(titlePersonKey)) {
+					continue;
 				}
+				allPeopleFound.putIfAbsent(key, person);
+				
+				lastNamesLogger.info(person.getLastName());
+
+				if (titlePersonKey != null && !titlePersonKey.isEmpty()) {
+					peopleLogger.info("Relacja #"+cntRelationFound.incrementAndGet() + " " + titlePersonKey + " <-> #" + cntPersonFound.incrementAndGet() + " " + key);
+				} else {
+					peopleLogger.info(allPeopleFound.size() + " : [" + pageTitle + "] <-> " + key);
+				}
+				
 			}
 		}
 
 		logger.debug("=============");
 	}
+
 	
 	private String extractPageTitle(final String title) {
 		 final String removeStr = " – Wikipedia, wolna encyklopedia";
@@ -117,6 +207,21 @@ public class WikiCrawler extends WebCrawler {
 
 	public static void main(String[] args) {
 		
+		namesDict = new NamesDictionary();
+		try {
+			namesDict.loadFromFile("d:/dev/workspace/people.graph/names_fulldict2.csv");
+		} catch (IOException e1) {
+			e1.printStackTrace();
+			return;
+		}
+
+		try {
+			lastNameDeclRules = new DeclinationRulesSet(WikiCrawler.class.getResourceAsStream("/lastnames_declination_rules.csv"));
+		} catch (IOException e1) {
+			e1.printStackTrace();
+			return; 
+		}
+
 	    /*
 	     * crawlStorageFolder is a folder where intermediate crawl data is
 	     * stored.
@@ -143,13 +248,13 @@ public class WikiCrawler extends WebCrawler {
 	     * You can set the maximum crawl depth here. The default value is -1 for
 	     * unlimited depth
 	     */
-	    config.setMaxDepthOfCrawling(2);
+	    config.setMaxDepthOfCrawling(5);
 	
 	    /*
 	     * You can set the maximum number of pages to crawl. The default value
 	     * is -1 for unlimited number of pages
 	     */
-	    config.setMaxPagesToFetch(1000);
+	    config.setMaxPagesToFetch(10_000);
 	
 	    /**
 	     * Do you want crawler4j to crawl also binary data ?
@@ -197,14 +302,24 @@ public class WikiCrawler extends WebCrawler {
 	//    controller.addSeed("http://www.ics.uci.edu/");
 	//    controller.addSeed("http://www.ics.uci.edu/~lopes/");
 	//    controller.addSeed("http://www.ics.uci.edu/~welling/");
-//		controller.addSeed("https://pl.wikipedia.org/wiki/Mariusz_Kazana");
-		controller.addSeed("https://pl.wikipedia.org/wiki/Departament_I_MSW");
+		controller.addSeed("https://pl.wikipedia.org/wiki/Mariusz_Kazana");
+		//controller.addSeed("https://pl.wikipedia.org/wiki/Departament_I_MSW");
+//		controller.addSeed("https://pl.wikipedia.org/wiki/Robert_Lewandowski");
 		
 	    /*
 	     * Start the crawl. This is a blocking operation, meaning that your code
 	     * will reach the line after this only when crawling is finished.
 	     */
 	    controller.start(WikiCrawler.class, numberOfCrawlers);
+	    
+	    // show statistic
+	    globalResult.entrySet().stream()
+	    	.sorted(Comparator.comparing(Entry<String,Integer>::getValue).reversed())
+	    	.forEach( 
+	    			(p) -> {
+	    				System.out.println(String.format("%s %d", p.getKey(), p.getValue()));
+	    			}
+	    	);
 	
 	}
 	

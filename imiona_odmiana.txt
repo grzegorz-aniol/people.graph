@@ -1,0 +1,19 @@
+-awa	D=awy, C=awie, B=awę, N=awą, M=awie, W=awo
+-ina	D=iny, C=inie, B=inę, N=iną, M=inie, W=ino
+-yna	D=yny, C=ynie, B=ynę, N=yną, M=ynie, W=yno
+-da		D=dy, C=dzie, B=dę, N=dą, M=dzie, W=do
+-ela	D=eli, C=eli, B=elę, N=elą, M=eli, W=elo
+-ta		D=ty, C=cie, B=tę, N=tą, M=cie, W=to
+-anna   D=anny, C=annie, B=annę, N=anną, M=annie, W=anno
+-ena    D=eny, C=enie, B=enę, N=eną, M=enie, W=eno
+-ta     D=ty, C=cie, B=tę, N=tą, M=cie, W=to
+-ja     D=ji, C=ji, B=ję, N=ją, M=ji, W=jo
+
+-ław    D=ława, C=ławowi, B=ława, N=ławem, M=ławie, W=ławie
+-imir   D=imira, C=imirowi, B=imira, N=imirem, M=imirze, W=imirze
+-omir   D=omira, C=omirowi, B=omira, N=omirem, M=omirze, W=omirze
+-niew   D=niewa, C=niewowi, B=niewa, N=niewem, M=niewie, W=niewie
+-jusz   D=jusza, C=juszowi, B=juza, N=juszem, M=juszu, W=juszu
+-bert   D=berta, C=bertowi, B=berta, N=bertem, M=bercie, W=bercie
+-jan    D=jana, C=janowi, B=jana, N=janem, M=janie, W=janie
+-acy    D=acego, C=acemu, B=acego, N=acym, M=acym, W=acy

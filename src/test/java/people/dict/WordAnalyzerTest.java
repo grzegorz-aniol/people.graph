@@ -112,5 +112,13 @@ public class WordAnalyzerTest {
 		final String input = "Hubert";
 		final String[] result = {"Hu", "bert"};
 		testData(input, result);
-	}	
+	}
+	
+	@Test
+	public void testCzarneckiego() {
+		final String input = "Czarneckiego";
+		final String[] result = {"Czar", "nec", "kie", "go"};
+		testData(input, result);
+	}		
+	
 }
