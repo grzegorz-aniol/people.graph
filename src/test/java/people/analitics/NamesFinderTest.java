@@ -56,17 +56,21 @@ public class NamesFinderTest {
 	
 	@Test
 	public void testDeclinedNames() {
-		final String TEXT = 
+
+		assertThat(namesDict.getFirst("Andrzeja"), notNullValue());
+
+		final String TEXT =
 				"posła na sejm Andrzeja Drzycimskiego i innych";
-		
-		verifyPersons(TEXT, new Person[] { 
-				Person.builder().male(true).firstName("Andrzej").lastName("Drzycimski").build()				
+
+		verifyPersons(TEXT, new Person[] {
+				Person.builder().male(true).firstName("Andrzej").lastName("Drzycimski").build()
 		});
 	}
 	
 	@Test
 	public void testWomanName() {
-		final String TEXT = 
+
+		final String TEXT =
 				"poszła tam razem z Wiktorią Kownacką oraz innymi osobami";
 		
 		verifyPersons(TEXT, new Person[] { 
@@ -89,11 +93,33 @@ public class NamesFinderTest {
 	public void testTwoLastNames() {
 		final String TEXT = 
 				"Spotkał tam się z Joanną Czeplik-Nowicką. ";
-		
-		verifyPersons(TEXT, new Person[] { 
+
+		verifyPersons(TEXT, new Person[] {
 				Person.builder().male(false).firstName("Joanna").lastName("Czeplik-Nowicka").build()				
 		});
 	}
 
-	
+	@Test
+	public void test4People() {
+		final String TEXT =
+			"Fundacja, z siedzibą w Warszawie, powstała z inicjatywy żony Mariusza Kazany, Barbary Kazany, oraz jego córki, Justyny Kazany";
+
+		verifyPersons(TEXT, new Person[] {
+			Person.builder().male(true).firstName("Mariusz").lastName("Kazana").build(),
+			Person.builder().male(false).firstName("Barbara").lastName("Kazana").build(),
+			Person.builder().male(false).firstName("Justyna").lastName("Kazana").build()
+		});
+	}
+
+	@Test
+	public void testSimilarPeople() {
+		final String TEXT =
+			"W spotkaniu uczestniczył prezydent Aleksander Kwaśniewski wraz z małżonką Aleksandrą Kwaśniewską.";
+
+		verifyPersons(TEXT, new Person[] {
+			Person.builder().male(true).firstName("Aleksander").lastName("Kwaśniewski").build(),
+			Person.builder().male(false).firstName("Aleksandra").lastName("Kwaśniewska").build()
+		});
+	}
+
 }
