@@ -12,6 +12,7 @@ import lombok.Setter;
 import lombok.val;
 import people.dict.DeclinationRulesSet;
 import people.dict.NamesDictionary;
+import people.dict.model.Gender;
 import people.dict.model.NounDeclination;
 import people.dict.model.Person;
 import people.dict.model.PersonName;
@@ -45,7 +46,20 @@ public class PeopleFinder {
 			 this.iterator = i;
 		 }
 	}
-	
+
+	private static <T> boolean matchCases(T value1, T value2, T exceptionCase) {
+		if (value1 == null || value2 == null) {
+			return false;
+		}
+		if (value1.equals(value2)) {
+			return true;
+		}
+		if (value1.equals(exceptionCase) || value2.equals(exceptionCase)) {
+			return true;
+		}
+		return false;
+	}
+
 	public PeopleFinder(NamesDictionary dict, DeclinationRulesSet rules) {
 		this.namesDict = dict; 
 		this.lastNameDeclRules = rules;
@@ -58,7 +72,7 @@ public class PeopleFinder {
 		return null;
 	}
 	
-	private List<PersonName> isLastName(WordText word) {
+	private List<PersonName> isLastName(WordText word, Gender knownGender) {
 		if (word.startsWithUpperCase()) {
 			String[] parts = word.getText().split("-");
 			if (parts.length > 2) {
@@ -67,7 +81,7 @@ public class PeopleFinder {
 			if (parts.length > 1 && !Character.isUpperCase(parts[1].charAt(0))) {					
 				return null;
 			}
-			return matchLastName(parts[0], parts.length > 1 ? parts[1] : null);
+			return matchLastName(parts[0], parts.length > 1 ? parts[1] : null, knownGender);
 		}
 		
 		return null;
@@ -84,26 +98,28 @@ public class PeopleFinder {
 				.firstName(firstNames.get(0).findMainForm())
 				.secondName(secondNames != null ? secondNames.get(0).findMainForm() : null)
 				.lastName(lastNames.get(0).findMainForm())
-				.male(firstNames.get(0).isMale())
+				.gender(firstNames.get(0).getGender())
 				.build();
 		}
+
+		Gender knownGender = (firstNames!=null && firstNames.size()==1 ? firstNames.get(0).getGender() : Gender.UNKNOWN);
 		
 		Iterator<PersonName> fnIter = firstNames.iterator();
 		while (fnIter.hasNext()) {
 			PersonName n1 = fnIter.next();
 			
 			PersonName l1 = lastNames.stream()
-				.filter( p -> p.isMale() == n1.isMale() )
-				.filter( p -> p.getNounDeclination()==NounDeclination.UNKNOWN || p.getNounDeclination().equals(n1.getNounDeclination()) )
+				.filter( p -> matchCases(p.getGender(), n1.getGender(), Gender.UNKNOWN))
+				.filter( p -> matchCases(p.getNounDeclination(), n1.getNounDeclination(), NounDeclination.UNKNOWN) )
 				.findFirst()
 				.orElse(null);
 				
 			PersonName s1 = Optional.ofNullable(secondNames)
 				.map(list -> list.stream()
-						.filter( p -> p.isMale() == n1.isMale())
-						.filter( p -> p.getNounDeclination()==NounDeclination.UNKNOWN || p.getNounDeclination().equals(n1.getNounDeclination() ))
-						.findFirst()
-						.orElse(null)
+					.filter( p -> matchCases(p.getGender(), n1.getGender(), Gender.UNKNOWN))
+					.filter( p -> matchCases(p.getNounDeclination(), n1.getNounDeclination(), NounDeclination.UNKNOWN) )
+					.findFirst()
+					.orElse(null)
 				)
 				.orElse(null);
 			
@@ -112,7 +128,7 @@ public class PeopleFinder {
 					.firstName(n1.findMainForm())
 					.secondName(s1 != null ? s1.findMainForm() : null)
 					.lastName(l1.findMainForm())
-					.male(n1.isMale())
+					.gender(n1.getGender())
 					.build();
 				
 			}
@@ -137,6 +153,7 @@ public class PeopleFinder {
 			while (iter.hasNext()) {				
 				WordText w = iter.next();
 				List<PersonName> n1 = isName(w);
+				Gender knownGender = (n1!=null && n1.size()==1 ? n1.get(0).getGender() : Gender.UNKNOWN);
 				Person personFound = null;
 				if (n1 != null) {
 					
@@ -145,7 +162,7 @@ public class PeopleFinder {
 					}
 					WordText w2 = iter.next();
 					List<PersonName> n2 = isName(w2);
-					List<PersonName> ln2 = isLastName(w2);
+					List<PersonName> ln2 = isLastName(w2, knownGender);
 					boolean matchSecondName = (n2 != null);
 					boolean matchLastName = (ln2 != null);
 					
@@ -157,7 +174,7 @@ public class PeopleFinder {
 							personFound = createPerson(n1, null, ln2);
 						} else {
 							WordText w3 = iter.next();
-							List<PersonName> ln3 = isLastName(w3);
+							List<PersonName> ln3 = isLastName(w3, knownGender);
 							if (ln3 != null) {
 								personFound = createPerson(n1, n2, ln3);
 							} else {
@@ -229,15 +246,15 @@ public class PeopleFinder {
 //		return persons; 
 //	}	
 	
-	private List<PersonName> matchLastName(final String lastNameText, final String lastName2Text) {
+	private List<PersonName> matchLastName(final String lastNameText, final String lastName2Text, Gender knownGender) {
 		if (lastNameText == null) {
 			return null;
 		}
-		List<PersonName> lastName = lastNameDeclRules.getProposedNames(lastNameText);
+		List<PersonName> lastName = lastNameDeclRules.getProposedNames(lastNameText, knownGender);
 		if (lastName == null) {
 			return null;
 		}
-		List<PersonName> lastName2 = (lastName2Text != null ? lastNameDeclRules.getProposedNames(lastName2Text) : null);
+		List<PersonName> lastName2 = (lastName2Text != null ? lastNameDeclRules.getProposedNames(lastName2Text, knownGender) : null);
 		
 		boolean isPart2 = (lastName2 != null && lastName2.size() > 0);
 		
@@ -251,9 +268,9 @@ public class PeopleFinder {
 			if (!isPart2) {
 				n1 = new PersonName(item1.getText(), item1.getName(), item1.getNounDeclination());				
 			} else {
-				n1 = new PersonName(lastNameText + "-" + lastName2Text, item1.getName()+"-"+lastName2.get(0).getName(), item1.getNounDeclination());								
+				n1 = new PersonName(lastNameText + "-" + lastName2.get(0).getText(), item1.getName()+"-"+lastName2.get(0).getName(), item1.getNounDeclination());
 			}
-			n1.setMale(item1.isMale());
+			n1.setGender(item1.getGender());
 
 			result.add(n1);
 		}

@@ -7,6 +7,7 @@ import java.util.stream.Stream;
 
 import people.dict.NamesDictionary;
 import people.dict.WordDictionaryWriter;
+import people.dict.model.Gender;
 import people.dict.model.PersonName;
 import people.dict.model.NounDeclination;
 import people.dict.model.WordRef;
@@ -40,7 +41,7 @@ public class NamesFromSJPGenerator {
 				if (args != null && args[0] != null) {
 					PersonName name = dict.getFirst(args[0]);
 					if (name != null) {
-						PersonName mainForm = generateMainForm(name.getText(), name.isMale());
+						PersonName mainForm = generateMainForm(name.getText(), name.getGender());
 						output.accept(mainForm);
 						for (int i=1; i < args.length; ++i) {
 							output.accept(generateDeclinedForm(mainForm, args[i]));
@@ -51,15 +52,15 @@ public class NamesFromSJPGenerator {
 		}		
 	}
 	
-	private static PersonName generateMainForm(String text, boolean isMale) {
+	private static PersonName generateMainForm(String text, Gender gender) {
 		PersonName fn = new PersonName(text, NounDeclination.M);
-		fn.setMale(isMale);
+		fn.setGender(gender);
 		return fn; 
 	}
 	
 	private static PersonName generateDeclinedForm(PersonName mainForm, String text) {
 		PersonName fn = new PersonName(text, NounDeclination.UNKNOWN);
-		fn.setMale(mainForm.isMale());
+		fn.setGender(mainForm.getGender());
 		fn.setRef(new WordRef(mainForm));
 		return fn; 
 	}	

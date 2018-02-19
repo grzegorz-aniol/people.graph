@@ -67,7 +67,7 @@ public class WordDictionaryReader {
 	    	   for (NounDeclination decl : declList) {
 	    		   name = new PersonName(nameRecord.NAME);
 	    		   name.setName(nameRecord.REFERENCE);
-	    		   name.setMale(nameRecord.SEX);
+	    		   name.selectGender(nameRecord.SEX);
 	    		   name.setSpeechPart(SpeechPart.NOUN);
 	    		   name.setNounDeclination(decl);
 	    		   output.accept(name);

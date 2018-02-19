@@ -7,6 +7,7 @@ import java.util.Optional;
 import java.util.function.Consumer;
 
 import lombok.SneakyThrows;
+import people.dict.model.Gender;
 import people.dict.model.PersonName;
 import people.dict.model.Word;
 import people.dict.model.WordRef;
@@ -25,7 +26,7 @@ public class WordDictionaryWriter implements Consumer<PersonName>, AutoCloseable
 	public void accept(PersonName t) {
 		StringBuilder sb = new StringBuilder();
 		sb.append(t.getText()).append(",");
-		sb.append(t.isMale()).append(",");
+		sb.append(t.getGender().equals(Gender.MALE)).append(",");
 		sb.append(t.getSpeechPart()).append(",");
 		sb.append(t.getNounDeclination()).append(",");
 		sb.append(Optional.ofNullable(t.getRef())

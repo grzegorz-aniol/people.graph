@@ -1,7 +1,5 @@
 package people.dict.model;
 
-import java.util.Optional;
-
 import org.apache.commons.lang.StringUtils;
 
 import lombok.Getter;
@@ -10,7 +8,7 @@ import lombok.Setter;
 @Getter @Setter
 public class PersonName extends Word {
 
-	private boolean male;
+	private Gender gender = Gender.UNKNOWN;
 	
 	private String name; 
 
@@ -30,7 +28,19 @@ public class PersonName extends Word {
 	public PersonName(String text, String name, NounDeclination nounForm) {
 		super(text, SpeechPart.NOUN, nounForm);
 		this.name = name; 
-	}	
+	}
+
+	public void selectGender(boolean isMale) {
+		gender = (isMale ? Gender.MALE : Gender.FEMALE);
+	}
+
+	public boolean isMale() {
+		return (this.gender.equals(Gender.MALE));
+	}
+
+	public boolean isFemale() {
+		return (this.gender.equals(Gender.FEMALE));
+	}
 
 	@Override
 	public String toString() {

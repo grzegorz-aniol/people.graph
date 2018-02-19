@@ -83,7 +83,7 @@ public class NamesDeclinationGenerator {
 	private static PersonName generateDeclinedForm(PersonName mainForm, String text, 
 			String suffix, String formSuffix, NounDeclination decl) {
 		PersonName fn = new PersonName(text, DeclinationRulesSet.replaceSuffix(text, suffix, formSuffix), decl);
-		fn.setMale(mainForm.isMale());
+		fn.setGender(mainForm.getGender());
 		fn.setRef(new WordRef(mainForm));
 //		System.out.print(fn.getName()+",");
 		return fn; 

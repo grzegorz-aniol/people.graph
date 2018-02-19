@@ -20,7 +20,7 @@ public class Person {
 	
 	private String title;
 	
-	private Boolean male; 
+	private Gender gender;
 
 	@Override
 	public String toString() {

@@ -78,7 +78,7 @@ public class NamesDictionary {
 			return list.stream()
 					.map(d -> {
 						val p = new PersonName(d.getText(), d.findMainForm(), d.getNounDeclination());
-						p.setMale(d.isMale());
+						p.setGender(d.getGender());
 						return p;
 					} )
 					.collect(Collectors.toList());

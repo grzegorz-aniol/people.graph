@@ -1,8 +1,10 @@
 package people.analitics;
 
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import lombok.val;
+import org.apache.commons.lang.StringUtils;
 
 public class TextAnalyzer {
 	
@@ -11,7 +13,7 @@ public class TextAnalyzer {
 	private int currentPos = 0;
 	
 	private static Pattern wordSeparators = Pattern.compile(
-			"\\W+",
+			"\\w+(\\-\\w+)?",
 			Pattern.UNICODE_CHARACTER_CLASS | Pattern.MULTILINE);	
 	
 	public TextAnalyzer(final String t) {
@@ -23,15 +25,17 @@ public class TextAnalyzer {
 			return null;
 		}
 		String str = text.substring(startPos, endPos);
-		final val result = new SentenceText(); 
-		wordSeparators.splitAsStream(str)
-		    .filter(w -> w != null && w.length() > 0)
-			.forEach(w -> {
+		final val result = new SentenceText();
+		Matcher matcher = wordSeparators.matcher(str);
+		while (matcher.find()) {
+			String w = matcher.group();
+			if (w != null && StringUtils.isNotBlank(w)) {
 				result.add(WordText.builder()
-							.text(w)
-							.build());
-			});
-		
+					.text(w)
+					.build());
+			}
+		}
+
 		if (result.size() == 0) {
 			return null;
 		}

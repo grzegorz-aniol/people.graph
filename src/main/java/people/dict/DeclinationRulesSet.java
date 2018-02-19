@@ -20,6 +20,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.val;
 import people.dict.model.DeclinationRule;
+import people.dict.model.Gender;
 import people.dict.model.NounDeclination;
 import people.dict.model.PersonName;
 import people.dict.model.SpeechPart;
@@ -74,23 +75,28 @@ public class DeclinationRulesSet {
 			.orElse(null);
 	}
 	
-	public void matchEndings(final String word, Consumer<RulesNode> consumer) {
+	public void matchEndings(final String word, Gender knownGender, Consumer<RulesNode> consumer) {
 		for(int i=1; i < word.length()-1; i++) {
 			String ending = word.substring(i);
 			allSuffixes.get(ending).stream()
 				.filter(node -> node != null)
+				.filter(node -> knownGender==Gender.UNKNOWN || (knownGender != Gender.UNKNOWN && node.getRule().isMan() == (knownGender==Gender.MALE)))
 				.forEach(node -> {
 					consumer.accept(node);
 				});
 		}
 	}
-	
+
 	public List<PersonName> getProposedNames(final String word) {
+		return getProposedNames(word, Gender.UNKNOWN);
+	}
+
+	public List<PersonName> getProposedNames(final String word, Gender knownGender) {
 		val result = new LinkedList<PersonName>();
-		matchEndings(word, node -> {
+		matchEndings(word, knownGender, node -> {
 			String mainForm = replaceSuffix(word, node.getText(), node.getRule().getSuffix());
 			val personName = new PersonName(word, mainForm, node.declination);
-			personName.setMale(node.getRule().isMan());
+			personName.selectGender(node.getRule().isMan());
 			result.add(personName);
 		});
 		if (result.size() == 0) {

@@ -14,6 +14,7 @@ import org.junit.Test;
 import lombok.val;
 import people.dict.DeclinationRulesSet;
 import people.dict.NamesDictionary;
+import people.dict.model.Gender;
 import people.dict.model.Person;
 
 public class NamesFinderTest {
@@ -22,7 +23,7 @@ public class NamesFinderTest {
 	
 	private static DeclinationRulesSet rules;
 	
-	private static final String NAMES_DICT_FILE_PATH = "./names_fulldict3.csv";
+	private static final String NAMES_DICT_FILE_PATH = "./names_fulldict4.csv";
 	private static final String LASTNAMES_DECLIN_RULES = "/lastnames_declination_rules.csv";
 	
 	@BeforeClass
@@ -31,25 +32,32 @@ public class NamesFinderTest {
 		rules = new DeclinationRulesSet(DeclinationRulesSet.class.getResourceAsStream(LASTNAMES_DECLIN_RULES));
 	}
 	
-	protected void verifyPersons(final String text, final Person[] results) {
+	protected void verifyPersons(final String text, final Person[] expectedResultPerson) {
 		PeopleFinder finder = new PeopleFinder(namesDict, rules);
 		
-		List<Person> persons = finder.identifyPeopleInText(text);
+		List<Person> actualResultPersons = finder.identifyPeopleInText(text);
 		
-		assertThat(persons, notNullValue());
-		assertThat(persons.size(), equalTo(results.length));
-			
-		// create persons map
-		final val personsMap = new HashMap<String, Person>();
-		persons.forEach((p)->personsMap.put(p.toString(), p));
-		
-		for (Person expected : results) {
-			Person actual = personsMap.get(expected.toString());
-			if (actual == null && results.length == 1) {
-				actual = results[0];
+		assertThat(actualResultPersons, notNullValue());
+
+		// create actualResultPersons map
+		final val actualPersonsMap = new HashMap<String, Person>();
+		actualResultPersons.forEach((p) -> {
+			String id = p.toString();
+			actualPersonsMap.put(id, p);
+			System.out.print(id + ",");
+		});
+		System.out.println();
+
+		assertThat(actualResultPersons.size(), equalTo(expectedResultPerson.length));
+
+		for (Person expected : expectedResultPerson) {
+			Person actual = actualPersonsMap.get(expected.toString());
+			if (actual == null && expectedResultPerson.length == 1 && actualResultPersons.size()==1) {
+				actual = actualResultPersons.get(0);
 			}
 			assertThat("Cannot find person:" + expected.toString(), actual, notNullValue());
-			assertThat("Gender is different", actual.getMale(), equalTo(expected.getMale()));
+			assertThat("Not same names", expected.toString(), equalTo(actual.toString()));
+			assertThat("Gender is different", actual.getGender(), equalTo(expected.getGender()));
 			assertThat("Person '" + expected.toString() + "' not found", actual, notNullValue());
 		}
 	}
@@ -63,7 +71,7 @@ public class NamesFinderTest {
 				"posła na sejm Andrzeja Drzycimskiego i innych";
 
 		verifyPersons(TEXT, new Person[] {
-				Person.builder().male(true).firstName("Andrzej").lastName("Drzycimski").build()
+				Person.builder().gender(Gender.MALE).firstName("Andrzej").lastName("Drzycimski").build()
 		});
 	}
 	
@@ -74,7 +82,7 @@ public class NamesFinderTest {
 				"poszła tam razem z Wiktorią Kownacką oraz innymi osobami";
 		
 		verifyPersons(TEXT, new Person[] { 
-				Person.builder().male(false).firstName("Wiktoria").lastName("Kownacka").build()				
+				Person.builder().gender(Gender.FEMALE).firstName("Wiktoria").lastName("Kownacka").build()				
 		});
 	}
 	
@@ -84,8 +92,8 @@ public class NamesFinderTest {
 				"byli to Jan Rokita oraz Stefania Wesołowska z rodziną";
 		
 		verifyPersons(TEXT, new Person[] { 
-				Person.builder().male(true).firstName("Jan").lastName("Rokita").build(),				
-				Person.builder().male(false).firstName("Stefania").lastName("Wesołowska").build()				
+				Person.builder().gender(Gender.MALE).firstName("Jan").lastName("Rokita").build(),				
+				Person.builder().gender(Gender.FEMALE).firstName("Stefania").lastName("Wesołowska").build()				
 		});
 	}	
 	
@@ -95,7 +103,7 @@ public class NamesFinderTest {
 				"Spotkał tam się z Joanną Czeplik-Nowicką. ";
 
 		verifyPersons(TEXT, new Person[] {
-				Person.builder().male(false).firstName("Joanna").lastName("Czeplik-Nowicka").build()				
+				Person.builder().gender(Gender.FEMALE).firstName("Joanna").lastName("Czeplik-Nowicka").build()				
 		});
 	}
 
@@ -105,9 +113,9 @@ public class NamesFinderTest {
 			"Fundacja, z siedzibą w Warszawie, powstała z inicjatywy żony Mariusza Kazany, Barbary Kazany, oraz jego córki, Justyny Kazany";
 
 		verifyPersons(TEXT, new Person[] {
-			Person.builder().male(true).firstName("Mariusz").lastName("Kazana").build(),
-			Person.builder().male(false).firstName("Barbara").lastName("Kazana").build(),
-			Person.builder().male(false).firstName("Justyna").lastName("Kazana").build()
+			Person.builder().gender(Gender.MALE).firstName("Mariusz").lastName("Kazana").build(),
+			Person.builder().gender(Gender.FEMALE).firstName("Barbara").lastName("Kazana").build(),
+			Person.builder().gender(Gender.FEMALE).firstName("Justyna").lastName("Kazana").build()
 		});
 	}
 
@@ -117,14 +125,18 @@ public class NamesFinderTest {
 			"W spotkaniu uczestniczył prezydent Aleksander Kwaśniewski wraz z małżonką Aleksandrą Kwaśniewską.";
 
 		verifyPersons(TEXT, new Person[] {
-			Person.builder().male(true).firstName("Aleksander").lastName("Kwaśniewski").build(),
-			Person.builder().male(false).firstName("Aleksandra").lastName("Kwaśniewska").build()
+			Person.builder().gender(Gender.MALE).firstName("Aleksander").lastName("Kwaśniewski").build(),
+			Person.builder().gender(Gender.FEMALE).firstName("Aleksandra").lastName("Kwaśniewska").build()
 		});
 	}
 
 
 	@Test
 	public void testMoreSentences() {
+
+		assertThat(namesDict.getFirst("Marek"), notNullValue());
+		assertThat(namesDict.getFirst("Bertold"), notNullValue());
+
 		final String TEXT =
 			"W związku z publikacją Doroty Kani w Super Expressie dotyczącą Marka Siwca i " +
 			"skierowaniem przez niego sprawy do sądu, dziennikarka i redaktor Bertold Kittel " +
@@ -137,11 +149,11 @@ public class NamesFinderTest {
 			"sprawie karnej przeciwko redaktor Dorocie Kani.";
 
 		verifyPersons(TEXT, new Person[] {
-			Person.builder().male(false).firstName("Dorota").lastName("Kania").build(),
-			Person.builder().male(true).firstName("Marek").lastName("Siwiec").build(),
-			Person.builder().male(true).firstName("Bertold").lastName("Kittel").build(),
-			Person.builder().male(true).firstName("Ryszard").lastName("Bieszyński").build(),
-			Person.builder().male(true).firstName("Witkor").lastName("Świetlik").build()
+			Person.builder().gender(Gender.FEMALE).firstName("Dorota").lastName("Kania").build(),
+			Person.builder().gender(Gender.MALE).firstName("Marek").lastName("Siwiec").build(),
+			Person.builder().gender(Gender.MALE).firstName("Bertold").lastName("Kittel").build(),
+			Person.builder().gender(Gender.MALE).firstName("Ryszard").lastName("Bieszyński").build(),
+			Person.builder().gender(Gender.MALE).firstName("Wiktor").lastName("Świetlik").build()
 		});
 	}
 
