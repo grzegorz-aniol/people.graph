@@ -100,7 +100,7 @@ public class NamesFinderTest {
 	}
 
 	@Test
-	public void test4People() {
+	public void test3People() {
 		final String TEXT =
 			"Fundacja, z siedzibą w Warszawie, powstała z inicjatywy żony Mariusza Kazany, Barbary Kazany, oraz jego córki, Justyny Kazany";
 
@@ -119,6 +119,29 @@ public class NamesFinderTest {
 		verifyPersons(TEXT, new Person[] {
 			Person.builder().male(true).firstName("Aleksander").lastName("Kwaśniewski").build(),
 			Person.builder().male(false).firstName("Aleksandra").lastName("Kwaśniewska").build()
+		});
+	}
+
+
+	@Test
+	public void testMoreSentences() {
+		final String TEXT =
+			"W związku z publikacją Doroty Kani w Super Expressie dotyczącą Marka Siwca i " +
+			"skierowaniem przez niego sprawy do sądu, dziennikarka i redaktor Bertold Kittel " +
+			"zostali skazani za naruszenie dóbr osobistych i zapłatę odszkodowania. W 2011 " +
+			"prawomocnym wyrokiem sądu Dorota Kania została skazana na karę grzywny za " +
+			"zniesławienie pułkownika SB, Ryszarda Bieszyńskiego, w związku z treścią artykułu "+
+			"pt. „Matka chrzestna”, opublikowanego w tygodniku Wprost z 2007[36][37]. W tej "+
+			"sprawie Wiktor Świetlik w imieniu Centrum Monitoringu Wolności Prasy Stowarzyszenia "+
+			"Dziennikarzy Polskich wystąpił do Rzecznika Praw Obywatelskich o kasację wyroku w "+
+			"sprawie karnej przeciwko redaktor Dorocie Kani.";
+
+		verifyPersons(TEXT, new Person[] {
+			Person.builder().male(false).firstName("Dorota").lastName("Kania").build(),
+			Person.builder().male(true).firstName("Marek").lastName("Siwiec").build(),
+			Person.builder().male(true).firstName("Bertold").lastName("Kittel").build(),
+			Person.builder().male(true).firstName("Ryszard").lastName("Bieszyński").build(),
+			Person.builder().male(true).firstName("Witkor").lastName("Świetlik").build()
 		});
 	}
 
