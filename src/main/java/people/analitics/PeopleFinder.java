@@ -201,51 +201,6 @@ public class PeopleFinder {
 		return persons; 
 	}
 	
-//	public List<Person> identifyPeopleInText(final String text) {
-//		
-//		val persons = new LinkedList<Person>();
-//		val foundPeople = new HashSet<String>();
-//		Matcher matcher = NamesDictionary.regexpPerson2.matcher(text);
-//		while (matcher.find()) {
-//			String firstNameCandidate = matcher.group(1);
-//			PersonName firstNameObj = namesDict.getFirst(firstNameCandidate);
-//			if (firstNameObj != null) {
-//				String fullName = matcher.group();
-//				if (!foundPeople.contains(fullName)) {
-//					foundPeople.add(fullName);
-//					
-//					PersonBuilder builder = Person.builder();
-//					
-//					builder.firstName(firstNameObj.findMainForm());
-//
-//					String secondNameCandidate = matcher.group(2);
-//					PersonName secondNameObj = namesDict.getFirst(secondNameCandidate);
-//					
-//					if (secondNameObj != null && matcher.group(3) != null) {
-//						// if 2nd group is a name and there is still 3rd group then 2nd is second name and 3rd is last name
-//						builder.secondName(secondNameObj.findMainForm());
-//						
-//						PersonName lastNameCandidate = matchLastName(matcher.group(3), null);
-//						if (lastNameCandidate != null) {
-//							builder.lastName(lastNameCandidate.getText());							
-//						}
-//						
-//					} else {
-//						PersonName lastNameCandidate = matchLastName(matcher.group(2), matcher.group(3));
-//						if (lastNameCandidate != null) {
-//							builder.lastName(lastNameCandidate.getText());							
-//						}
-//					}
-//					
-//					Person p = builder.build();
-//					
-//					persons.add(p);					
-//				}				
-//			}
-//		}
-//		return persons; 
-//	}	
-	
 	private List<PersonName> matchLastName(final String lastNameText, final String lastName2Text, Gender knownGender) {
 		if (lastNameText == null) {
 			return null;

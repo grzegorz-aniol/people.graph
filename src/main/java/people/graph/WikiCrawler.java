@@ -1,6 +1,9 @@
 package people.graph;
 
+import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -9,6 +12,7 @@ import java.util.Map.Entry;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.regex.Pattern;
+import java.util.stream.Stream;
 
 import org.apache.commons.lang.WordUtils;
 import org.slf4j.Logger;
@@ -209,7 +213,7 @@ public class WikiCrawler extends WebCrawler {
 		
 		namesDict = new NamesDictionary();
 		try {
-			namesDict.loadFromFile("d:/dev/workspace/people.graph/names_fulldict2.csv");
+			namesDict.loadFromFile("./names_fulldict4.csv");
 		} catch (IOException e1) {
 			e1.printStackTrace();
 			return;
@@ -226,7 +230,7 @@ public class WikiCrawler extends WebCrawler {
 	     * crawlStorageFolder is a folder where intermediate crawl data is
 	     * stored.
 	     */
-	    String crawlStorageFolder = "d:/dev/workspace/people.graph/crawler_data";
+	    String crawlStorageFolder = "./crawler_data";
 	
 	    /*
 	     * numberOfCrawlers shows the number of concurrent threads that should
@@ -248,7 +252,7 @@ public class WikiCrawler extends WebCrawler {
 	     * You can set the maximum crawl depth here. The default value is -1 for
 	     * unlimited depth
 	     */
-	    config.setMaxDepthOfCrawling(5);
+	    config.setMaxDepthOfCrawling(2);
 	
 	    /*
 	     * You can set the maximum number of pages to crawl. The default value
@@ -293,19 +297,19 @@ public class WikiCrawler extends WebCrawler {
 			logger.error(e.getMessage());
 			return; 
 		}
-	
-	    /*
+
+		try (Stream<String> stream = Files.lines(Paths.get("./url_seeds.txt"))) {
+			stream.forEach(url -> controller.addSeed(url));
+		} catch (IOException e) {
+			logger.error(e.getMessage());
+			return;
+		}
+		/*
 	     * For each crawl, you need to add some seed urls. These are the first
 	     * URLs that are fetched and then the crawler starts following links
 	     * which are found in these pages
 	     */
-	//    controller.addSeed("http://www.ics.uci.edu/");
-	//    controller.addSeed("http://www.ics.uci.edu/~lopes/");
-	//    controller.addSeed("http://www.ics.uci.edu/~welling/");
-		controller.addSeed("https://pl.wikipedia.org/wiki/Mariusz_Kazana");
-		//controller.addSeed("https://pl.wikipedia.org/wiki/Departament_I_MSW");
-//		controller.addSeed("https://pl.wikipedia.org/wiki/Robert_Lewandowski");
-		
+
 	    /*
 	     * Start the crawl. This is a blocking operation, meaning that your code
 	     * will reach the line after this only when crawling is finished.
