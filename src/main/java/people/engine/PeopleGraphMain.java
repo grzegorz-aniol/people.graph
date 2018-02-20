@@ -10,11 +10,9 @@ import people.nlp.standard.StandardNLPEngine;
 import people.source.webcrawler.WikiCrawlerController;
 
 import java.io.IOException;
-import java.util.Deque;
-import java.util.Iterator;
 import java.util.List;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.ConcurrentLinkedDeque;
+import java.util.Queue;
+import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.stream.Collectors;
 
@@ -29,10 +27,7 @@ public class PeopleGraphMain implements TextResourceConsumer {
 
     private WikiCrawlerController wikiCrawler;
 
-    private Integer syncFullQueue = new Integer(0);
-    private Integer syncEmptyQueue = new Integer(0);
-
-    private Deque<TextResource> resourceQueue = new ConcurrentLinkedDeque<>();;
+    private Queue<TextResource> resourceQueue = new LinkedBlockingQueue<>(RESOURCE_QUEUE_SIZE_LIMIT);
 
     private static AtomicLong cntPersonFound = new AtomicLong(0);
     private static AtomicLong cntRelationFound = new AtomicLong(0);
@@ -54,41 +49,10 @@ public class PeopleGraphMain implements TextResourceConsumer {
         log.info("Engine is done.");
     }
 
-    private void waitOnEmptyQueue() throws InterruptedException {
-        try {
-            synchronized(syncEmptyQueue) {
-                syncEmptyQueue.wait(500);
-            }
-        } catch (InterruptedException e) {
-            log.warn("Engine thread is interrupted. Exiting. ");
-            throw e;
-        }
-    }
-
-    private void waitOnFullQueue() throws InterruptedException {
-        log.warn("Resource queue limit reached!");
-        try {
-            synchronized(syncFullQueue) {
-                syncFullQueue.wait(500);
-            }
-        } catch (InterruptedException e) {
-            log.warn("Thread has been interrupted. New text resource hasn't been proceeded.");
-            throw e;
-        }
-    }
-
     private void proceesQueue() throws InterruptedException {
-
         do {
-            TextResource resource = resourceQueue.pollFirst();
-            if (resource == null) {
-                waitOnEmptyQueue();
-                continue;
-            }
+            TextResource resource = resourceQueue.poll();
             if (resource != null) {
-                synchronized(syncFullQueue) {
-                    syncFullQueue.notify();
-                }
                 processResource(resource);
             }
         } while (true);
@@ -134,12 +98,6 @@ public class PeopleGraphMain implements TextResourceConsumer {
     @Override
     @SneakyThrows
     public void addNewResource(TextResource resource) {
-        while (resourceQueue.size() >= RESOURCE_QUEUE_SIZE_LIMIT) {
-            waitOnFullQueue();
-        }
         resourceQueue.add(resource);
-        synchronized(syncEmptyQueue) {
-            syncEmptyQueue.notify();
-        }
     }
 }
