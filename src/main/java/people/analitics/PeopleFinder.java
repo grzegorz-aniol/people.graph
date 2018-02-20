@@ -23,23 +23,7 @@ public class PeopleFinder {
 	
 	private DeclinationRulesSet lastNameDeclRules;
 	
-	private Context context;
-	
 	@Getter @Setter
-	private static class Context {
-		Boolean male = null;
-		NounDeclination declination = NounDeclination.UNKNOWN;
-		PersonName firstName;
-		PersonName secondName; 
-		PersonName lastName;
-		Position position; 
-		
-		public Context(Position p) {
-			this.position = p;
-		}
-	};
-	
-	@Getter @Setter 
 	private static class Position {
 		 ListIterator<WordText> iterator; 
 		 public Position(ListIterator<WordText> i) {
@@ -66,14 +50,14 @@ public class PeopleFinder {
 	}
 	
 	private List<PersonName> isName(WordText word) {
-		if (word.startsWithUpperCase()) {
+		if (word != null && word.getLength() > 1 && word.startsWithUpperCase()) {
 			return namesDict.get(word.getText());
 		}
 		return null;
 	}
 	
 	private List<PersonName> isLastName(WordText word, Gender knownGender) {
-		if (word.startsWithUpperCase()) {
+		if (word != null && word.getLength() > 1 && word.startsWithUpperCase()) {
 			String[] parts = word.getText().split("-");
 			if (parts.length > 2) {
 				return null;
@@ -148,8 +132,7 @@ public class PeopleFinder {
 			ListIterator<WordText> iter = sentence.getIterator();
 			
 			Position pos = new Position(iter);
-			Context ctx = new Context(pos);
-			
+
 			while (iter.hasNext()) {				
 				WordText w = iter.next();
 				List<PersonName> n1 = isName(w);
@@ -202,7 +185,7 @@ public class PeopleFinder {
 	}
 	
 	private List<PersonName> matchLastName(final String lastNameText, final String lastName2Text, Gender knownGender) {
-		if (lastNameText == null) {
+		if (lastNameText == null || lastNameText.length() < 2) {
 			return null;
 		}
 		List<PersonName> lastName = lastNameDeclRules.getProposedNames(lastNameText, knownGender);

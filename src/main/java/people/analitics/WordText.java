@@ -18,8 +18,6 @@ public class WordText {
 	
 	private int startPos;
 	
-	private int length;
-	
 	private String separatorBefore;
 	
 	private String separatorAfter; 
@@ -32,5 +30,8 @@ public class WordText {
 	public String toString() {
 		return text; 
 	}
-	
+
+	public int getLength() {
+		return (text != null ? text.length() : 0);
+	}
 }
