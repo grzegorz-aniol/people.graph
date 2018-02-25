@@ -1,21 +1,19 @@
 package people.analitics;
 
-import static org.hamcrest.CoreMatchers.equalTo;
-import static org.hamcrest.CoreMatchers.notNullValue;
-import static org.junit.Assert.assertThat;
+import lombok.val;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import people.dict.DeclinationRulesSet;
+import people.dict.NamesDictionary;
+import people.dict.model.Gender;
+import people.dict.model.Person;
+import people.dict.model.PersonName;
 
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 
-import org.junit.BeforeClass;
-import org.junit.Test;
-
-import lombok.val;
-import people.dict.DeclinationRulesSet;
-import people.dict.NamesDictionary;
-import people.dict.model.Gender;
-import people.dict.model.Person;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class NamesFinderTest {
 
@@ -29,15 +27,18 @@ public class NamesFinderTest {
 	@BeforeClass
 	public static void onInitClass() throws IOException {
 		namesDict.loadFromFile(NAMES_DICT_FILE_PATH);
+		assertThat(namesDict.size()).isGreaterThan(0L);
+
 		rules = new DeclinationRulesSet(DeclinationRulesSet.class.getResourceAsStream(LASTNAMES_DECLIN_RULES));
+		assertThat(rules.size()).isGreaterThan(0L);
 	}
 	
 	protected void verifyPersons(final String text, final Person[] expectedResultPerson) {
 		PeopleFinder finder = new PeopleFinder(namesDict, rules);
-		
+
 		List<Person> actualResultPersons = finder.identifyPeopleInText(text);
-		
-		assertThat(actualResultPersons, notNullValue());
+
+		assertThat(actualResultPersons).isNotNull();
 
 		// create actualResultPersons map
 		final val actualPersonsMap = new HashMap<String, Person>();
@@ -48,24 +49,35 @@ public class NamesFinderTest {
 		});
 		System.out.println();
 
-		assertThat(actualResultPersons.size(), equalTo(expectedResultPerson.length));
+		assertThat(actualResultPersons.size()).isEqualTo(expectedResultPerson.length);
 
 		for (Person expected : expectedResultPerson) {
 			Person actual = actualPersonsMap.get(expected.toString());
 			if (actual == null && expectedResultPerson.length == 1 && actualResultPersons.size()==1) {
 				actual = actualResultPersons.get(0);
 			}
-			assertThat("Cannot find person:" + expected.toString(), actual, notNullValue());
-			assertThat("Not same names", expected.toString(), equalTo(actual.toString()));
-			assertThat("Gender is different", actual.getGender(), equalTo(expected.getGender()));
-			assertThat("Person '" + expected.toString() + "' not found", actual, notNullValue());
+			assertThat(actual).as("Cannot find person:" + expected.toString()).isNotNull();
+			assertThat(actual.toString()).as("Not same names").isEqualTo(expected.toString());
+			assertThat(actual.getGender()).as("Gender is different").isEqualTo(expected.getGender());
 		}
+	}
+
+	@Test
+	public void testSkipAcronym() {
+
+		PeopleFinder finder = new PeopleFinder(namesDict, rules);
+		assertThat(finder.isUpperCase("Welcome")).isEqualTo(false);
+		assertThat(finder.isUpperCase("welcome")).isEqualTo(false);
+		assertThat(finder.isUpperCase("PZPR")).isEqualTo(true);
+
+		assertThat(finder.isLastName(new WordText("DYWIZJA"), Gender.UNKNOWN)).isEqualTo(null);
+
 	}
 	
 	@Test
 	public void testDeclinedNames() {
 
-		assertThat(namesDict.getFirst("Andrzeja"), notNullValue());
+		assertThat(namesDict.getFirst("Andrzeja")).isNotNull();
 
 		final String TEXT =
 				"posła na sejm Andrzeja Drzycimskiego i innych";
@@ -121,6 +133,10 @@ public class NamesFinderTest {
 
 	@Test
 	public void testSimilarPeople() {
+
+		PersonName testName = namesDict.getFirst("Aleksandrą");
+		assertThat(testName).isNotNull();
+
 		final String TEXT =
 			"W spotkaniu uczestniczył prezydent Aleksander Kwaśniewski wraz z małżonką Aleksandrą Kwaśniewską.";
 
@@ -134,8 +150,8 @@ public class NamesFinderTest {
 	@Test
 	public void testMoreSentences() {
 
-		assertThat(namesDict.getFirst("Marek"), notNullValue());
-		assertThat(namesDict.getFirst("Bertold"), notNullValue());
+		assertThat(namesDict.getFirst("Marek")).isNotNull();
+		assertThat(namesDict.getFirst("Bertold")).isNotNull();
 
 		final String TEXT =
 			"W związku z publikacją Doroty Kani w Super Expressie dotyczącą Marka Siwca i " +

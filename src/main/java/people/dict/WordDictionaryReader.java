@@ -40,8 +40,7 @@ public class WordDictionaryReader {
 	};
 	
 	public void load(final String fileName, Consumer<PersonName> output) throws IOException {
-	       
-	       final CsvBeanReader reader = new CsvBeanReader(new InputStreamReader(new FileInputStream(fileName)), CsvPreference.STANDARD_PREFERENCE);
+	       final CsvBeanReader reader = new CsvBeanReader(new InputStreamReader(new FileInputStream(fileName), "UTF-8"), CsvPreference.STANDARD_PREFERENCE );
 	       final String[] header = reader.getHeader(true);
 
 	       final List<NounDeclination> EMPTY_DECLINATION = new ArrayList<NounDeclination>(1);

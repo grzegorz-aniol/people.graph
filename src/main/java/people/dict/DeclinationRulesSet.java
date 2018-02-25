@@ -42,7 +42,11 @@ public class DeclinationRulesSet {
 	
 	private TreeMap<String, DeclinationRule> nameDeclRules = new TreeMap<>();
 	private ArrayListValuedHashMap<String, RulesNode> allSuffixes = new ArrayListValuedHashMap<>();
-	
+
+	public long size() {
+		return allSuffixes.size();
+	}
+
 	public DeclinationRulesSet(File inputFile) throws IOException {
 		this(new FileInputStream(inputFile.getCanonicalPath()));
 	}

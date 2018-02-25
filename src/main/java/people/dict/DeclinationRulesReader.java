@@ -37,7 +37,7 @@ public class DeclinationRulesReader {
 
 	public static void load(final InputStream inputStream, Consumer<DeclinationRule> output) throws IOException {
 		
-	       try(CsvBeanReader reader = new CsvBeanReader(new InputStreamReader(inputStream), CsvPreference.STANDARD_PREFERENCE)) {
+	       try(CsvBeanReader reader = new CsvBeanReader(new InputStreamReader(inputStream, "UTF-8"), CsvPreference.STANDARD_PREFERENCE)) {
 	    	   final String[] header = reader.getHeader(true);
 	    	   
 	    	   DeclinationRule nameRecord = null;

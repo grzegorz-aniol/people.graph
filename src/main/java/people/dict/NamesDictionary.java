@@ -42,7 +42,7 @@ public class NamesDictionary {
                 new ParseBool() // sex 
        };
        
-       try (CsvBeanReader reader = new CsvBeanReader(new InputStreamReader(NamesDictionary.class.getResourceAsStream("/first_names.csv")), CsvPreference.STANDARD_PREFERENCE)) {
+       try (CsvBeanReader reader = new CsvBeanReader(new InputStreamReader(NamesDictionary.class.getResourceAsStream("/first_names.csv"),"UTF-8"), CsvPreference.STANDARD_PREFERENCE)) {
     	   final String[] header = reader.getHeader(true);
     	   
     	   FileRecordEntry record;
@@ -94,6 +94,10 @@ public class NamesDictionary {
 			}
 		}
 		return null;
+	}
+
+	public long size() {
+		return this.mapNames.size();
 	}
 
 	public static Pattern regexpPerson2 = Pattern.compile(
