@@ -16,6 +16,8 @@
 		<maven.compiler.testTarget>1.8</maven.compiler.testTarget>
 
 		<supercsv.version>2.4.0</supercsv.version>
+
+		<neo4jdriver.version>1.5.1</neo4jdriver.version>
 	</properties>
 
 	<dependencies>
@@ -57,7 +59,12 @@
 			<artifactId>super-csv-java8</artifactId>
 			<version>${supercsv.version}</version>
 		</dependency>
-		
+		<dependency>
+			<groupId>org.neo4j.driver</groupId>
+			<artifactId>neo4j-java-driver</artifactId>
+			<version>${neo4jdriver.version}</version>
+		</dependency>
+
 		<dependency>
 		  <groupId>org.assertj</groupId>
 		  <artifactId>assertj-core</artifactId>

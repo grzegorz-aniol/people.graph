@@ -125,15 +125,6 @@ public class WikiCrawlerController extends WebCrawler implements CrawlController
 	     */
 	    controller.startNonBlocking(this::newInstance, numberOfCrawlers);
 	    
-//	    // show statistic
-//	    globalResult.entrySet().stream()
-//	    	.sorted(Comparator.comparing(Entry<String,Integer>::getValue).reversed())
-//	    	.forEach(
-//	    			(p) -> {
-//	    				System.out.println(String.format("%s %d", p.getKey(), p.getValue()));
-//	    			}
-//	    	);
-	
 	}
 
 

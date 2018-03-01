@@ -138,7 +138,7 @@ public class PeopleFinder {
 		val persons = new LinkedList<Person>();
 		val foundPeople = new HashSet<String>();
 
-		log.info("Text: {}", text);
+		log.trace("Text: {}", text);
 
 		for (Sentence sentence = textAnalyzer.getNextSentence(); sentence != null; sentence = textAnalyzer.getNextSentence()) {
 			Iterator<SentencePart> sentenceIter = sentence.getIterator();
@@ -164,7 +164,7 @@ public class PeopleFinder {
 						List<PersonName> n2 = isName(w2);
 						List<PersonName> ln2 = isLastName(w2, knownGender);
 
-						log.info("Test: w1: {}, w2: {}, name?: {}, last-name?: {}", w.getText().toString(), w2.getText().toString(), n2!=null, ln2!=null);
+						log.trace("Test: w1: {}, w2: {}, name?: {}, last-name?: {}", w.getText().toString(), w2.getText().toString(), n2!=null, ln2!=null);
 
 						boolean matchSecondName = (n2 != null);
 						boolean matchLastName = (ln2 != null);

@@ -1,39 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
- 
-  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
-    <layout class="ch.qos.logback.classic.PatternLayout">
-      <Pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</Pattern>
-    </layout>
-  </appender>
-  
-  <appender name="PEOPLE" class="ch.qos.logback.core.FileAppender">
-    <file>people.log</file>
-    <append>true</append>
-    <immediateFlush>true</immediateFlush>
-    <encoder>
-      <pattern>%msg%n</pattern>
-    </encoder>
-  </appender>  
-  
-  <appender name="LASTNAMES" class="ch.qos.logback.core.FileAppender">
-    <file>nazwiska.log</file>
-    <append>true</append>
-    <immediateFlush>true</immediateFlush>
-    <encoder>
-      <pattern>%msg%n</pattern>
-    </encoder>
-  </appender>    
-  
-  <logger name="PEOPLE" level="INFO">
-  	<appender-ref ref="PEOPLE" />
-  </logger>
-  
-  <logger name="LASTNAMES" level="INFO">
-  	<appender-ref ref="LASTNAMES" />
-  </logger>  
-  <root level="INFO">
-    <appender-ref ref="STDOUT" />
-  </root>
-  
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <Pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</Pattern>
+        </layout>
+    </appender>
+
+    <appender name="PEOPLE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>people.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+            <fileNamePattern>people.%i.log</fileNamePattern>
+            <minIndex>1</minIndex>
+            <maxIndex>3</maxIndex>
+        </rollingPolicy>
+
+        <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+            <maxFileSize>100MB</maxFileSize>
+        </triggeringPolicy>
+
+        <immediateFlush>true</immediateFlush>
+        <encoder>
+            <pattern>%msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="LASTNAMES" class="ch.qos.logback.core.FileAppender">
+        <file>nazwiska.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+            <fileNamePattern>nazwiska.%i.log</fileNamePattern>
+            <minIndex>1</minIndex>
+            <maxIndex>3</maxIndex>
+        </rollingPolicy>
+
+        <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+            <maxFileSize>100MB</maxFileSize>
+        </triggeringPolicy>
+        <append>true</append>
+        <immediateFlush>true</immediateFlush>
+        <encoder>
+            <pattern>%msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="PEOPLE" level="INFO">
+        <appender-ref ref="PEOPLE"/>
+    </logger>
+
+    <logger name="LASTNAMES" level="INFO">
+        <appender-ref ref="LASTNAMES"/>
+    </logger>
+    <root level="INFO">
+        <appender-ref ref="STDOUT"/>
+    </root>
+
 </configuration>

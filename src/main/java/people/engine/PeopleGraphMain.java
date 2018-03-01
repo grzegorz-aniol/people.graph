@@ -2,7 +2,9 @@ package people.engine;
 
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
-import people.analitics.people.output.log.PeopleLogOutput;
+import people.api.PersonOutputPlugin;
+import people.output.log.Neo4jOutput;
+import people.output.log.PeopleLogOutput;
 import people.api.TextResource;
 import people.api.TextResourceConsumer;
 import people.dict.model.Person;
@@ -21,20 +23,24 @@ public class PeopleGraphMain implements TextResourceConsumer {
 
     private static final int RESOURCE_QUEUE_SIZE_LIMIT = 1_000;
 
-    private PeopleLogOutput outputPlugin;
+    private PersonOutputPlugin outputPlugin;
 
     private StandardNLPEngine nlpEngine;
 
     private WikiCrawlerController wikiCrawler;
 
-    private Queue<TextResource> resourceQueue = new LinkedBlockingQueue<>(RESOURCE_QUEUE_SIZE_LIMIT);
+    private LinkedBlockingQueue<TextResource> resourceQueue = new LinkedBlockingQueue<>(RESOURCE_QUEUE_SIZE_LIMIT);
 
     private static AtomicLong cntPersonFound = new AtomicLong(0);
     private static AtomicLong cntRelationFound = new AtomicLong(0);
+    private static AtomicLong cntResourcesAnalyzed = new AtomicLong(0);
 
     public void run() throws IOException {
         log.info("Engine started.");
-        outputPlugin = new PeopleLogOutput();
+
+//        outputPlugin = new PeopleLogOutput();
+        outputPlugin = new Neo4jOutput();
+
         nlpEngine = new StandardNLPEngine();
         wikiCrawler = new WikiCrawlerController(this);
 
@@ -51,7 +57,7 @@ public class PeopleGraphMain implements TextResourceConsumer {
 
     private void proceesQueue() throws InterruptedException {
         do {
-            TextResource resource = resourceQueue.poll();
+            TextResource resource = resourceQueue.take();
             if (resource != null) {
                 processResource(resource);
             }
@@ -60,10 +66,15 @@ public class PeopleGraphMain implements TextResourceConsumer {
 
     private void processResource(TextResource resource) {
 
+        long cntr = cntResourcesAnalyzed.incrementAndGet();
+        System.out.print("Resources: " + cntr + "\r");
+
         outputPlugin.beforeNewSet(resource.getSourceTypeName(), resource.getResourceId());
+
         List<Person> personsInTitle = nlpEngine.process(resource.getResourceTitle())
             .peek(person -> {
                 outputPlugin.onPerson(person);
+                cntPersonFound.incrementAndGet();
             })
             .collect(Collectors.toList());
 
@@ -75,12 +86,29 @@ public class PeopleGraphMain implements TextResourceConsumer {
                 boolean isTitlePerson = (isTitleAboutPerson && person.toString().equals(personFromTitle.toString()));
                 if (!isTitlePerson) {
                     outputPlugin.onPerson(person);
+                    cntPersonFound.incrementAndGet();
                     if (isTitleAboutPerson) {
+                        cntRelationFound.incrementAndGet();
                         outputPlugin.onRelation(personFromTitle, person, "wiki-page");
                     }
                 }
+
+                long cntp = cntPersonFound.get();
+                if (cntp % 100 == 0) {
+                    System.out.print("Resources: " + cntr + ", persons: " + cntp +"\r");
+                }
+
             });
 
+        outputPlugin.afterNewSet();
+    }
+
+    public void printStats() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("\n\nNumber of persons found: ").append(cntPersonFound.get()).append("\n");
+        sb.append("Number of relations: ").append(cntRelationFound.get()).append("\n");
+        sb.append("Number of resources analyzed: ").append(cntResourcesAnalyzed.get()).append("\n");
+        System.out.println(sb.toString());
     }
 
     public static void main(final String[] args) {
@@ -98,6 +126,6 @@ public class PeopleGraphMain implements TextResourceConsumer {
     @Override
     @SneakyThrows
     public void addNewResource(TextResource resource) {
-        resourceQueue.add(resource);
+        resourceQueue.put(resource);
     }
 }
