@@ -1,5 +1,7 @@
 package people.engine;
 
+import com.codahale.metrics.SlidingWindowReservoir;
+import com.codahale.metrics.Timer;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import people.api.PersonOutputPlugin;
@@ -15,6 +17,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Queue;
 import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.stream.Collectors;
 
@@ -35,7 +38,9 @@ public class PeopleGraphMain implements TextResourceConsumer {
     private static AtomicLong cntRelationFound = new AtomicLong(0);
     private static AtomicLong cntResourcesAnalyzed = new AtomicLong(0);
 
-    public void run() throws IOException {
+    private boolean isSourceCompleted = false;
+
+    public void run() throws Exception {
         log.info("Engine started.");
 
 //        outputPlugin = new PeopleLogOutput();
@@ -44,22 +49,40 @@ public class PeopleGraphMain implements TextResourceConsumer {
         nlpEngine = new StandardNLPEngine();
         wikiCrawler = new WikiCrawlerController(this);
 
+        outputPlugin.onInit();
+
         wikiCrawler.start();
+
+        Thread metricsThread = new Thread(new PerformanceReporter());
+        metricsThread.start();
+
         try {
             proceesQueue();
         } catch (InterruptedException e) {
             return;
         }
+
+        outputPlugin.onDone();
+
+        metricsThread.interrupt();
+        metricsThread.join();
+
         wikiCrawler.stop();
 
+        outputPlugin.close();
+
+        printStats();
         log.info("Engine is done.");
     }
 
     private void proceesQueue() throws InterruptedException {
         do {
-            TextResource resource = resourceQueue.take();
+            TextResource resource = resourceQueue.poll(200, TimeUnit.MILLISECONDS);
             if (resource != null) {
                 processResource(resource);
+            }
+            if (isSourceCompleted || wikiCrawler.isFinished()) {
+                return;
             }
         } while (true);
     }
@@ -93,22 +116,16 @@ public class PeopleGraphMain implements TextResourceConsumer {
                     }
                 }
 
-                long cntp = cntPersonFound.get();
-                if (cntp % 100 == 0) {
-                    System.out.print("Resources: " + cntr + ", persons: " + cntp +"\r");
-                }
-
             });
 
         outputPlugin.afterNewSet();
     }
 
     public void printStats() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("\n\nNumber of persons found: ").append(cntPersonFound.get()).append("\n");
-        sb.append("Number of relations: ").append(cntRelationFound.get()).append("\n");
-        sb.append("Number of resources analyzed: ").append(cntResourcesAnalyzed.get()).append("\n");
-        System.out.println(sb.toString());
+        log.info("Number of persons found: {}", cntPersonFound.get());
+        log.info("Number of relations: {}", cntRelationFound.get());
+        log.info("Number of resources analyzed: {}", cntResourcesAnalyzed.get());
+        outputPlugin.printStats();
     }
 
     public static void main(final String[] args) {
@@ -116,8 +133,8 @@ public class PeopleGraphMain implements TextResourceConsumer {
         try {
             new PeopleGraphMain().run();
 
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (Throwable e) {
+            log.error("General error", e);
             System.exit(1);
         }
 
@@ -125,7 +142,27 @@ public class PeopleGraphMain implements TextResourceConsumer {
 
     @Override
     @SneakyThrows
-    public void addNewResource(TextResource resource) {
+    public void onNewResource(TextResource resource) {
         resourceQueue.put(resource);
+    }
+
+    @Override
+    public void onComplete() {
+        isSourceCompleted = true;
+    }
+
+    private class PerformanceReporter implements Runnable {
+
+        @Override
+        public void run() {
+            while (true) {
+                try {
+                    Thread.currentThread().sleep(5000);
+                } catch (InterruptedException e) {
+                    return;
+                }
+                printStats();
+            }
+        }
     }
 }

@@ -2,6 +2,8 @@ package people.api;
 
 public interface TextResourceConsumer {
 
-    void addNewResource(TextResource resource);
+    void onNewResource(TextResource resource);
+
+    void onComplete();
 
 }

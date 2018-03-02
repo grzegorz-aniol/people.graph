@@ -5,7 +5,6 @@ import edu.uci.ics.crawler4j.crawler.WebCrawler;
 import edu.uci.ics.crawler4j.parser.HtmlParseData;
 import edu.uci.ics.crawler4j.url.WebURL;
 import lombok.SneakyThrows;
-import org.apache.commons.lang.WordUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import people.api.TextResource;
@@ -130,7 +129,7 @@ public class WikiCrawler extends WebCrawler {
 //			String html = htmlParseData.getHtml();
 //			Set<WebURL> links = htmlParseData.getOutgoingUrls();
 
-            resourceConsumer.addNewResource(TextResource.builder()
+            resourceConsumer.onNewResource(TextResource.builder()
                 .sourceTypeName("wiki")
                 .resourceId(url)
                 .resourceTitle(pageTitle)

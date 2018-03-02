@@ -6,6 +6,7 @@ import edu.uci.ics.crawler4j.crawler.WebCrawler;
 import edu.uci.ics.crawler4j.fetcher.PageFetcher;
 import edu.uci.ics.crawler4j.robotstxt.RobotstxtConfig;
 import edu.uci.ics.crawler4j.robotstxt.RobotstxtServer;
+import lombok.extern.slf4j.Slf4j;
 import people.api.TextResourceConsumer;
 
 import java.io.IOException;
@@ -13,7 +14,8 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.stream.Stream;
 
-public class WikiCrawlerController extends WebCrawler implements CrawlController.WebCrawlerFactory {
+@Slf4j
+public class WikiCrawlerController implements CrawlController.WebCrawlerFactory {
 
 	private TextResourceConsumer resourceConsumer;
 	private CrawlController controller;
@@ -92,7 +94,7 @@ public class WikiCrawlerController extends WebCrawler implements CrawlController
 	     * want to start a fresh crawl, you need to delete the contents of
 	     * rootFolder manually.
 	     */
-	    config.setResumableCrawling(false);
+	    config.setResumableCrawling(true);
 	
 	    /*
 	     * Instantiate the controller for this crawl.
@@ -103,29 +105,22 @@ public class WikiCrawlerController extends WebCrawler implements CrawlController
 		try {
 			controller = new CrawlController(config, pageFetcher, robotstxtServer);
 		} catch (Exception e) {
-			logger.error(e.getMessage());
+			log.error(e.getMessage());
 			return; 
 		}
 
 		try (Stream<String> stream = Files.lines(Paths.get("./url_seeds.txt"))) {
 			stream.forEach(url -> controller.addSeed(url));
 		} catch (IOException e) {
-			logger.error(e.getMessage());
+			log.error(e.getMessage());
 			return;
 		}
-		/*
-	     * For each crawl, you need to add some seed urls. These are the first
-	     * URLs that are fetched and then the crawler starts following links
-	     * which are found in these pages
-	     */
 
-	    /*
-	     * Start the crawl. This is a blocking operation, meaning that your code
-	     * will reach the line after this only when crawling is finished.
-	     */
 	    controller.startNonBlocking(this::newInstance, numberOfCrawlers);
-	    
 	}
 
+	public boolean isFinished() {
+		return (controller.isFinished());
+	}
 
 }

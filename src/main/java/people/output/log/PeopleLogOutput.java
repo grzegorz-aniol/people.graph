@@ -41,4 +41,11 @@ public class PeopleLogOutput implements PersonOutputPlugin {
         log.info("Relation #{} : {} <- {} -> {}", total, person1.toString(), relationName, person2.toString());
     }
 
+    @Override
+    public void printStats() {
+    }
+
+    @Override
+    public void close() throws Exception {
+    }
 }
