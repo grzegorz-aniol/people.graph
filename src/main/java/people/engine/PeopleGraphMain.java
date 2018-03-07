@@ -1,21 +1,16 @@
 package people.engine;
 
-import com.codahale.metrics.SlidingWindowReservoir;
-import com.codahale.metrics.Timer;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import people.api.PersonOutputPlugin;
-import people.output.log.Neo4jOutput;
-import people.output.log.PeopleLogOutput;
 import people.api.TextResource;
 import people.api.TextResourceConsumer;
 import people.dict.model.Person;
 import people.nlp.standard.StandardNLPEngine;
+import people.output.neo4j.Neo4jOutput;
 import people.source.webcrawler.WikiCrawlerController;
 
-import java.io.IOException;
 import java.util.List;
-import java.util.Queue;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicLong;
