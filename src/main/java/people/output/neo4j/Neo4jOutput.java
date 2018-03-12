@@ -131,7 +131,9 @@ public class Neo4jOutput implements PersonOutputPlugin {
             return statement.single().get(0).asLong();
         });
 
-        person.setId(id);
+        Objects.requireNonNull(id);
+
+        person.setId(id.toString());
         addPersonToCache(id, person);
 
         return person;

@@ -8,6 +8,7 @@ import people.api.TextResourceConsumer;
 import people.dict.model.Person;
 import people.nlp.standard.StandardNLPEngine;
 import people.output.neo4j.Neo4jOutput;
+import people.output.orientdb.OrientDbOutput;
 import people.source.webcrawler.WikiCrawlerController;
 
 import java.util.List;
@@ -39,7 +40,8 @@ public class PeopleGraphMain implements TextResourceConsumer {
         log.info("Engine started.");
 
 //        outputPlugin = new PeopleLogOutput();
-        outputPlugin = new Neo4jOutput();
+//        outputPlugin = new Neo4jOutput();
+        outputPlugin = new OrientDbOutput();
 
         nlpEngine = new StandardNLPEngine();
         wikiCrawler = new WikiCrawlerController(this);

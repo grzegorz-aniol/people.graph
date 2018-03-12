@@ -10,7 +10,7 @@ import lombok.Setter;
 @NoArgsConstructor @AllArgsConstructor @Builder
 public class Person {
 		
-	private Long id;
+	private String id;
 	
 	private String firstName;
 		
@@ -24,7 +24,10 @@ public class Person {
 
 	@Override
 	public String toString() {
-		return firstName + " " + lastName;
+		return firstName +
+				(secondName != null ? " " + secondName : "")
+				+ " "
+				+ lastName;
 	} 
 	
 }
