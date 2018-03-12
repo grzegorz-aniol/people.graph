@@ -37,6 +37,15 @@ public class OrientDbOutput implements PersonOutputPlugin {
         final String pwd = "admin";
         connection = OrientDbConnectionProducer.createRemoteConnection("localhost", dbName, user, pwd);
         session = connection.getDb().open(dbName, user, pwd);
+
+        personsMetrics.getInitialCount().set( session.countClass("Person") );
+        sourcesMetrics.getInitialCount().set( 0 );
+        long v1 = session.countClass("Wiki");
+        relationsMetrics.getInitialCount().set(v1);
+
+        log.info("# of Person nodes in db = {}", personsMetrics.getInitialCount().get());
+        log.info("# of Source nodes in db = {}", sourcesMetrics.getInitialCount().get());
+        log.info("# of relations in db = {}", relationsMetrics.getInitialCount().get());
     }
 
     @Override
