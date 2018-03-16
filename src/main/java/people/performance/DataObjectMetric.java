@@ -5,23 +5,24 @@ import com.codahale.metrics.Timer;
 import lombok.Getter;
 
 import java.util.concurrent.atomic.AtomicLong;
+import java.util.concurrent.atomic.LongAdder;
 
 public class DataObjectMetric {
 
     @Getter
-    private AtomicLong initialCount = new AtomicLong(0);
+    private LongAdder initialCount = new LongAdder();
 
     @Getter
-    private AtomicLong savedCount = new AtomicLong(0);
+    private LongAdder savedCount = new LongAdder();
 
     @Getter
-    private AtomicLong foundCount = new AtomicLong(0);
+    private LongAdder foundCount = new LongAdder();
 
     @Getter
     private Timer saveTimer;
 
     @Getter
-    private AtomicLong cacheHitRation = new AtomicLong(0);
+    private LongAdder cacheHitRation = new LongAdder();
 
     public DataObjectMetric() {
         saveTimer = new Timer(new SlidingWindowReservoir(1_000));

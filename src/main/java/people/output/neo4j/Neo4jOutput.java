@@ -45,15 +45,15 @@ public class Neo4jOutput implements PersonOutputPlugin {
 
     @Override
     public void onInit() {
-        personsMetrics.getInitialCount().set( session.run("match (p:Person) return count(p)").single().get(0).asLong());
-        sourcesMetrics.getInitialCount().set( session.run("match (s:Source) return count(s)").single().get(0).asLong());
+        personsMetrics.getInitialCount().add( session.run("match (p:Person) return count(p)").single().get(0).asLong());
+        sourcesMetrics.getInitialCount().add( session.run("match (s:Source) return count(s)").single().get(0).asLong());
         long v1 = session.run("match ()-[w:inwiki]->() return count(w)").single().get(0).asLong();
         long v2 = session.run("match ()-[w:insource]->() return count(w)").single().get(0).asLong();
-        relationsMetrics.getInitialCount().set(v1 + v2);
+        relationsMetrics.getInitialCount().add(v1 + v2);
 
-        log.info("# of Person nodes in db = {}", personsMetrics.getInitialCount().get());
-        log.info("# of Source nodes in db = {}", sourcesMetrics.getInitialCount().get());
-        log.info("# of relations in db = {}", relationsMetrics.getInitialCount().get());
+        log.info("# of Person nodes in db = {}", personsMetrics.getInitialCount().longValue());
+        log.info("# of Source nodes in db = {}", sourcesMetrics.getInitialCount().longValue());
+        log.info("# of relations in db = {}", relationsMetrics.getInitialCount().longValue());
     }
 
     @Override
