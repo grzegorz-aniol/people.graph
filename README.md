@@ -16,7 +16,7 @@ Here are some performance results achieved during importing data:
 
 ** Neo4j 3.3.3 **
 
-|                    |                |               |                  |
+| Operation          | Average time   | Min time      | Max time         |
 | ---------------------------------------------------------------------- |
 | Creating persons   | avg=130,437 ms | min=41,471 ms | max=306,532 ms   |
 | Creating relations | avg= 40,747 ms | min= 0,455 ms | max=136,625 ms   |
