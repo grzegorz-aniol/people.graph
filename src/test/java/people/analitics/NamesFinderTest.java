@@ -3,6 +3,7 @@ package people.analitics;
 import lombok.val;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import people.conf.PeopleConfig;
 import people.dict.DeclinationRulesSet;
 import people.dict.NamesDictionary;
 import people.dict.model.Gender;
@@ -21,7 +22,7 @@ public class NamesFinderTest {
 	
 	private static DeclinationRulesSet rules;
 	
-	private static final String NAMES_DICT_FILE_PATH = "./names_fulldict4.csv";
+	private static final String NAMES_DICT_FILE_PATH = PeopleConfig.DATA_FOLDER + "/names_fulldict4.csv";
 	private static final String LASTNAMES_DECLIN_RULES = "/lastnames_declination_rules.csv";
 	
 	@BeforeClass

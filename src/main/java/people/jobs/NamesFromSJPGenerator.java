@@ -5,6 +5,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.stream.Stream;
 
+import people.conf.PeopleConfig;
 import people.dict.NamesDictionary;
 import people.dict.WordDictionaryWriter;
 import people.dict.model.Gender;
@@ -24,7 +25,7 @@ public class NamesFromSJPGenerator {
 		System.out.println("Processing...");
 		try {
 			dict.loadNamesFromResource();
-			WordDictionaryWriter output = new WordDictionaryWriter("./names_fulldict2.csv");
+			WordDictionaryWriter output = new WordDictionaryWriter(PeopleConfig.DATA_FOLDER + "/names_fulldict2.csv");
 			readSPJDict("d:/databases/aspell/odm.txt", output);
 			output.close();
 		} catch (Exception e) {

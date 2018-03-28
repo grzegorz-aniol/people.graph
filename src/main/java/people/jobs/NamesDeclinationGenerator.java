@@ -17,6 +17,7 @@ import org.supercsv.cellprocessor.ift.CellProcessor;
 import org.supercsv.io.CsvBeanReader;
 import org.supercsv.prefs.CsvPreference;
 
+import people.conf.PeopleConfig;
 import people.dict.DeclinationRulesReader;
 import people.dict.DeclinationRulesSet;
 import people.dict.NamesDictionary;
@@ -71,7 +72,7 @@ public class NamesDeclinationGenerator {
 		
 		Collections.sort(allNames, new Word.DefaultComparator());
 		
-		try (WordDictionaryWriter outputNames = new WordDictionaryWriter("./names_fulldict.csv")) {
+		try (WordDictionaryWriter outputNames = new WordDictionaryWriter(PeopleConfig.DATA_FOLDER +"/names_fulldict.csv")) {
 			allNames.stream().forEach(outputNames);
 			
 		} catch (Exception e) {

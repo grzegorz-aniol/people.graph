@@ -117,18 +117,6 @@ public class WikiCrawler extends WebCrawler {
                 pageBody = pageBody.substring(0, linksPos);
             }
 
-//			PrintWriter pr;
-//			try {
-//				pr = new PrintWriter("./web/" + cntPages.get() + ".txt");
-//				pr.print(pageBody);
-//				pr.flush();
-//				pr.close();
-//			} catch (FileNotFoundException e) {
-//			}
-
-//			String html = htmlParseData.getHtml();
-//			Set<WebURL> links = htmlParseData.getOutgoingUrls();
-
             resourceConsumer.onNewResource(TextResource.builder()
                 .sourceTypeName("wiki")
                 .resourceId(url)
