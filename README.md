@@ -25,15 +25,15 @@ Here are some performance results achieved during importing data:
 
 OrientDB with index for Person.name
 
-|                    |                |               |                  |
-| ---------------------------------------------------------------------- |
+| Operation          | Average time   | Min time      | Max time         |
+| ------------------ | -------------- | --------------| ---------------- |
 | Creating persons   | avg=1,336 ms  | min=1,132 ms  | max=8,293 ms    |
 | Creating relations | avg=90,948 ms | min=78,615 ms | max=127,330 ms  | 
 
 OrientDB with index for Person.name, index on Wiki.in and .out
 
-|                    |                |               |                  |
-| ---------------------------------------------------------------------- |
+| Operation          | Average time   | Min time      | Max time         |
+| ------------------ | -------------- | --------------| ---------------- |
 | Creating persons   | avg=1,283 ms | min=1,058 ms | max=3,654 ms      |
 | Creating relations | avg=1,781 ms | min=0,773 ms | max=5,032 ms      |
 
