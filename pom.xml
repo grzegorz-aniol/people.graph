@@ -9,8 +9,6 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>11</java.version>
-        <maven.compiler.target>11</maven.compiler.target>
-        <maven.compiler.testTarget>11</maven.compiler.testTarget>
         <supercsv.version>2.4.0</supercsv.version>
         <neo4jdriver.version>1.5.1</neo4jdriver.version>
         <orientdb.version>3.0.0RC2</orientdb.version>
